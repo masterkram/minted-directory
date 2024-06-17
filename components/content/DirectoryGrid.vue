@@ -7,7 +7,7 @@ const { data } = await useAsyncData('board', () => queryContent('/board').sort({
   <div class="grid grid-cols-4 gap-4">
     <NuxtLink :to="i._path" v-for="i in data" class="border rounded p-6 relative group">
       <span v-if="i.sponsor"
-        class="absolute group-hover:border-primary-500 -top-3 border border-300 rounded-full bg-gray-100 px-3.5 text-gray-600">
+        class="absolute text-sm font-medium py-0.5 group-hover:border-primary-500 -top-3 border border-300 rounded-full bg-gray-100 px-3.5 text-gray-600">
         Featured ✨
       </span>
       <h3 class="m-0">

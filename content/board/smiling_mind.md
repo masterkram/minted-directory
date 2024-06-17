@@ -1,3 +1,0 @@
-# Smiling Mind
-
-hello smile.

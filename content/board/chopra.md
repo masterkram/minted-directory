@@ -1,7 +1,0 @@
----
-sponsor: true
----
-
-# Chopra
-
-chopra

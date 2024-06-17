@@ -12,7 +12,7 @@ const href = computed(() => {
 </script>
 
 <template>
-  <a :href="href">
+  <a>
     <div class="bg-blue-500 h-6 text-white">
       <div class="text-center font-medium">
         {{ content }}

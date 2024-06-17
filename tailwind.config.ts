@@ -1,16 +1,17 @@
 import colors from "tailwindcss/colors";
 import typography from "@tailwindcss/typography";
+import forms from "@tailwindcss/forms";
 
 export default {
   darkMode: "class",
-  plugins: [typography()],
+  plugins: [typography(), forms()],
   theme: {
     extend: {
       fontFamily: {
         display: ["DM Sans"],
       },
       colors: {
-        primary: colors.teal,
+        primary: colors.sky,
       },
     },
   },
