@@ -17,7 +17,4 @@ export default defineNuxtConfig({
   content: {
     documentDriven: true,
   },
-  studio: {
-    enabled: true,
-  },
 });
