@@ -1,9 +1,9 @@
 ::centerHero
-# All Best Meditation Apps
+# All Best NuxtJs Starter Templates 
 
-Find the best Meditation Apps.
+Find the the best Nuxt templates that can help you take your project from idea to built quickly.
 
-Leave stress behind and achieve peace internally.
+
 ::
 
 :search

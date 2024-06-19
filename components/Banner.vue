@@ -12,11 +12,14 @@ const href = computed(() => {
 </script>
 
 <template>
-  <a>
-    <div class="bg-blue-500 h-6 text-white">
-      <div class="text-center font-medium">
-        {{ content }}
+  <div>
+    <a v-if="content">
+      <div class="bg-blue-500 h-6 text-white">
+        <div class="text-center font-medium">
+          {{ content }}
+        </div>
       </div>
-    </div>
-  </a>
+    </a>
+    <div></div>
+  </div>
 </template>
