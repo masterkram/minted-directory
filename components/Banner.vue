@@ -9,17 +9,31 @@ const href = computed(() => {
 
   return null;
 });
+
+const showBanner = useState('showBanner', () => true);
+
+function removeBanner() {
+  showBanner.value = false;
+}
 </script>
 
 <template>
-  <div>
-    <a v-if="content">
-      <div class="bg-blue-500 h-6 text-white">
-        <div class="text-center font-medium">
-          {{ content }}
-        </div>
-      </div>
-    </a>
-    <div></div>
+  <div v-show="showBanner" class="flex items-center gap-x-6 bg-primary-600 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
+    <p class="text-sm leading-6 text-white">
+      <a href="#">
+        <strong class="font-semibold">GeneriCon 2023</strong><svg viewBox="0 0 2 2"
+          class="mx-2 inline h-0.5 w-0.5 fill-current" aria-hidden="true">
+          <circle cx="1" cy="1" r="1" />
+        </svg>
+        {{ content }}
+        &nbsp;<span aria-hidden="true">&rarr;</span>
+      </a>
+    </p>
+    <div class="flex flex-1 justify-end">
+      <button @click="removeBanner" type="button" class="-m-3 p-3 focus-visible:outline-offset-[-4px]">
+        <span class="sr-only">Dismiss</span>
+        <Icon name="ph:x" class="h-5 w-5 text-white" aria-hidden="true" />
+      </button>
+    </div>
   </div>
 </template>
