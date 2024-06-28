@@ -1,8 +1,8 @@
 <script setup lang="ts">
-const content = useAppConfig().directory.bannerText;
+const bannerConfig = useAppConfig().banner;
 
 const href = computed(() => {
-  const link = useAppConfig().directory.bannerLink;
+  const link = useAppConfig().banner.link;
   if (link) {
     return link;
   }
@@ -18,14 +18,16 @@ function removeBanner() {
 </script>
 
 <template>
-  <div v-show="showBanner" class="flex items-center gap-x-6 bg-primary-600 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
+  <div v-show="showBanner && bannerConfig.show"
+    class="flex items-center gap-x-6 bg-primary-600 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
     <p class="text-sm leading-6 text-white">
       <a href="#">
-        <strong class="font-semibold">GeneriCon 2023</strong><svg viewBox="0 0 2 2"
-          class="mx-2 inline h-0.5 w-0.5 fill-current" aria-hidden="true">
+        <strong v-if="bannerConfig.brandText" class="font-semibold">{{ bannerConfig.brandText }}</strong>
+        <svg v-if="bannerConfig.brandText" viewBox="0 0 2 2" class="mx-2 inline h-0.5 w-0.5 fill-current"
+          aria-hidden="true">
           <circle cx="1" cy="1" r="1" />
         </svg>
-        {{ content }}
+        {{ bannerConfig.text }}
         &nbsp;<span aria-hidden="true">&rarr;</span>
       </a>
     </p>

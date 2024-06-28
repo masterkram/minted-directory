@@ -1,3 +1,7 @@
+---
+layout: wide
+---
+
 ::twoColumnHero{imgSrc="/undraw_nuxt_js_0fq9.png"}
 # All Best NuxtJs [Starter Templates] 
 

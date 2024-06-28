@@ -1,6 +1,5 @@
 <script setup lang="ts">
-const search = useState("search");
-const { data } = await useAsyncData('board', () => queryContent('/board').sort({ sponsored: 1 }).find());
+const { data } = await useAsyncData('board', () => queryContent('/blog').where({ _path: { $ne: "/blog" } }).find());
 </script>
 
 <template>

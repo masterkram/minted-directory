@@ -1,10 +1,14 @@
 export default defineAppConfig({
   directory: {
     searchTag: "Search nuxt templates 🔎",
-    bannerText: "Welcome to a new directory website.",
-    bannerLink: "",
     showFeaturedOnAllPages: true,
     featuredText: "Featured ✨",
+  },
+  banner: {
+    show: true,
+    text: "Create your own directory website in minutes.",
+    link: "https://github.com/masterkram/nuxt-directory",
+    brandText: "NuxtDirectory",
   },
   ui: {
     displayFont: "Crimson Pro",

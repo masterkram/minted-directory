@@ -1,3 +1,8 @@
+---
+tags:
+  - SAAS
+---
+
 # Nuxt UI Pro SaaS
 
 Saas boilerplate made in nuxt using nuxt UI.

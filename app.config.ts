@@ -1,10 +1,19 @@
 export default defineAppConfig({
+  general: {
+    title: "Nuxtjs Starters",
+    logo: "/logo.png",
+  },
   directory: {
     searchTag: "Search meditation apps ✨",
-    bannerText: "🍪 Site Launch Deal: Free Cookies 🍪",
-    bannerLink: "",
     showFeaturedOnAllPages: true,
     featuredText: "Featured ✨",
+    tags: [{ name: "SAAS" }],
+  },
+  banner: {
+    show: true,
+    text: "Create a directory site",
+    link: "https://github.com/masterkram/nuxt-directory",
+    brandText: "NuxtDirectory",
   },
   ui: {
     displayFont: "Crimson Pro",
