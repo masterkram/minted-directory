@@ -1,15 +1,16 @@
 <script setup lang="ts">
-import {
-  Listbox,
-  ListboxLabel,
-  ListboxButton,
-  ListboxOptions,
-  ListboxOption,
-} from '@headlessui/vue';
+const router = useRouter();
 
 const search = useState("search");
 const searchTag = useAppConfig().directory.searchTag;
 const searchInput = ref();
+
+watch(search, (twitchStreamer, previous) => {
+  router.push({
+    path: '/',
+    query: { search: search.value },
+  })
+})
 
 const keyListener = function (e: KeyboardEvent) {
   if (e.key === "k" && (e.ctrlKey || e.metaKey)) {
@@ -29,7 +30,13 @@ onBeforeUnmount(() => {
 const tags = useAppConfig().directory.tags;
 
 const selectedTag = ref(tags[0]);
-const query = ref('')
+const query = ref('');
+
+const selectedTags: Ref<Array<string>> = ref([]);
+
+function addTag(event: any) {
+  selectedTags.value.push("tagg");
+}
 </script>
 
 <template>
@@ -44,8 +51,16 @@ const query = ref('')
       </div>
     </div>
     <div class="flex m-0 gap-4 mt-4">
-      <div class="">
-        <Listbox v-model="selectedTag" class="z-10">
+      <div v-for="i in selectedTags" class="border rounded-lg p-1">
+        tag-{{ i }}
+      </div>
+      <select :modelValue="null" @update:modelValue="($event: any) => console.log($event)"
+        class="border border-dashed border-gray-300 rounded-lg">
+        <option></option>
+        <option v-for="tag in tags">{{ tag.name }}</option>
+      </select>
+
+      <!-- <Listbox v-model="selectedTag" class="z-10">
           <div class="relative mt-1">
             <ListboxButton
               class="relative w-full border cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
@@ -77,8 +92,8 @@ const query = ref('')
               </ListboxOptions>
             </transition>
           </div>
-        </Listbox>
-      </div>
+        </Listbox> -->
+
     </div>
   </div>
 </template>
