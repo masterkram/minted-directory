@@ -2,12 +2,13 @@ export default defineAppConfig({
   general: {
     title: "Nuxtjs Starters",
     logo: "/logo.png",
+    description: "Find the the best Nuxt templates.",
   },
   directory: {
     searchTag: "Search meditation apps ✨",
     showFeaturedOnAllPages: true,
     featuredText: "Featured ✨",
-    tags: [{ name: "SAAS" }],
+    tags: [{ name: "SAAS", color: "blue" }],
   },
   banner: {
     show: true,

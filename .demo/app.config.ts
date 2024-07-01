@@ -1,8 +1,21 @@
 export default defineAppConfig({
+  general: {
+    title: "Nuxtjs Starters",
+    logo: "/logo.png",
+    description: "Find the the best Nuxt templates.",
+  },
   directory: {
     searchTag: "Search nuxt templates 🔎",
     showFeaturedOnAllPages: true,
     featuredText: "Featured ✨",
+    tags: [
+      { name: "SAAS", color: "blue" },
+      { name: "dashboard" },
+      { name: "landing-page" },
+      { name: "toolbox" },
+      { name: "agency" },
+      { name: "markdown-based" },
+    ],
   },
   banner: {
     show: true,

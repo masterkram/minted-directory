@@ -1,14 +1,16 @@
 <script setup lang="ts">
-const search: Ref<string> = useState("search");
+import type SearchData from '../../types/SearchData';
+
+const search: Ref<SearchData> = useState("search", () => ({ query: "", tags: [] }));
 const { data, refresh } = useAsyncData('board', () => {
   const query = queryContent('/board');
 
   // Conditionally add the 'where' clause if the search input is not empty
-  if (search.value.trim()) {
+  if (search.value.query) {
     query.where({
       $or: [
-        { title: { $containsAny: search.value.split(' ') } },
-        { description: { $containsAny: search.value.split(' ') } },
+        { title: { $containsAny: search.value.query.split(' ') } },
+        { description: { $containsAny: search.value.query.split(' ') } },
       ]
     });
   }

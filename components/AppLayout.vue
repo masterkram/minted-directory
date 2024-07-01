@@ -3,6 +3,7 @@
     <Banner />
     <AppNavbar />
     <slot />
+    <AppFooter />
   </div>
 </template>
 
