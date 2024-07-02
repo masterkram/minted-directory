@@ -1,17 +1,19 @@
 <script setup lang="ts">
-import type SearchData from '../../types/SearchData';
-
 const router = useRouter();
 
-const search: Ref<SearchData> = useState("search", () => ({ query: "", tags: [] }));
+const search: Ref<string> = useState("search");
+const selectedTags: Ref<string[]> = useState("tags", () => []);
 
 const searchTag = useAppConfig().directory.searchTag;
 
-watch(search, (newValue, previous) => {
-  router.push({
-    query: { search: newValue.query.trim() },
-  })
-})
+watch(
+  [search, selectedTags],
+  () => {
+    router.push({
+      query: { search: search.value.trim(), tags: selectedTags.value },
+    });
+  },
+);
 
 const searchInput = useKeyFocus();
 
@@ -22,16 +24,15 @@ const availableTags = computed(() => {
 });
 
 function removeTag(myTag: string) {
-  selectedTags.value = selectedTags.value.filter(e => e != myTag);
+  const index = selectedTags.value.indexOf(myTag);
+  selectedTags.value.splice(index, 1);
 }
-
-const selectedTags: Ref<Array<string>> = ref([]);
 
 function addTag(event: any) {
   const select = event.target as HTMLSelectElement;
   const selectedValue = select.value;
 
-  if (selectedValue && !selectedTags.value.includes(selectedValue)) {
+  if (selectedTags.value && !selectedTags.value.includes(selectedValue)) {
     selectedTags.value.push(selectedValue);
     // Optionally clear the selection after adding
     select.value = '';
@@ -43,7 +44,7 @@ function addTag(event: any) {
 <template>
   <div class="mb-10 not-prose">
     <div class="relative flex items-center">
-      <input v-model="search.query" ref="searchInput"
+      <input v-model="search" ref="searchInput"
         class="block w-full rounded-md border-0 py-2 pr-14 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6"
         :placeholder="searchTag">
       <div class="absolute inset-y-0 right-0 flex py-1.5 pr-1.5">

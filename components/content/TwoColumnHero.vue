@@ -5,7 +5,7 @@ const props = defineProps(['imgSrc']);
 <template>
   <div class="flex items-start pt-20 pb-20 gap-10">
     <div>
-      <h1>
+      <h1 class="text-balance font-extrabold tracking-tight">
         <ContentSlot :use="$slots.default" unwrap="h1" />
       </h1>
       <ContentSlot :use="$slots.description" />
@@ -17,7 +17,11 @@ const props = defineProps(['imgSrc']);
 </template>
 
 <style scoped lang="postcss">
-h1 span {
+.highlight span {
+  @apply bg-gray-800 text-white px-1 -rotate-6;
+}
+
+.dashedcue span {
   @apply underline underline-offset-4 decoration-primary-600 decoration-dashed;
 }
 </style>
