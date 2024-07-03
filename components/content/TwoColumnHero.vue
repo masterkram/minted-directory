@@ -3,15 +3,15 @@ const props = defineProps(['imgSrc']);
 </script>
 
 <template>
-  <div class="flex items-start pt-20 pb-20 gap-10">
+  <div class="flex flex-col justify-center items-center md:flex-row pt-20 pb-20 gap-10">
     <div>
-      <h1 class="text-balance font-extrabold tracking-tight">
+      <h1 class="text-5xl dashedcue text-balance font-extrabold tracking-tight">
         <ContentSlot :use="$slots.default" unwrap="h1" />
       </h1>
       <ContentSlot :use="$slots.description" />
     </div>
     <div>
-      <img class="w-full max-h-64 m-0" :src="imgSrc" />
+      <img class="max-w-sm xl:max-w-lg" :src="imgSrc" />
     </div>
   </div>
 </template>
