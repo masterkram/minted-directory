@@ -6,12 +6,10 @@ const darkMode = config.nuxtIcon.aliases["dark-mode"];
 const lightMode = config.nuxtIcon.aliases["light-mode"];
 
 function toggleColorMode() {
-  console.log("hi");
   if (colorMode.value === "dark") {
-    colorMode.value = "light";
+    colorMode.preference = "light";
   } else {
-    colorMode.value = "dark";
-
+    colorMode.preference = "dark";
   }
 }
 </script>

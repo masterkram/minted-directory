@@ -4,6 +4,7 @@ tags:
   - toolbox
 demo: https://agency-os.vercel.app/
 github: https://github.com/directus-labs/agency-os
+sponsored: true
 ---
 
 

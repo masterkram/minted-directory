@@ -23,7 +23,7 @@ export default defineAppConfig({
   banner: {
     show: true,
     text: "Create your own directory website in minutes.",
-    link: "",
+    link: "https://github.com/masterkram/nuxt-directory",
     brandText: "NuxtDirectory",
   },
   ui: {
