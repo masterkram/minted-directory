@@ -4,7 +4,7 @@ const navigation = [{ name: "Home", href: "/" }, { name: "Blog", href: "/blog" }
 </script>
 
 <template>
-  <footer class="border-t">
+  <footer class="border-t dark:border-zinc-700">
     <div class="max-w-prose mx-auto py-6 flex justify-between">
       <div class="space-y-2">
         <AppLogo />

@@ -4,6 +4,9 @@ export default defineAppConfig({
     logo: "/logo.png",
     description: "Find the the best Nuxt templates.",
   },
+  navbar: {
+    colorModeSelector: true,
+  },
   directory: {
     searchTag: "Search nuxt templates 🔎",
     showFeaturedOnAllPages: true,
@@ -20,7 +23,7 @@ export default defineAppConfig({
   banner: {
     show: true,
     text: "Create your own directory website in minutes.",
-    link: "https://github.com/masterkram/nuxt-directory?tab=readme-ov-file#setup",
+    link: "",
     brandText: "NuxtDirectory",
   },
   ui: {
