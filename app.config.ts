@@ -8,7 +8,7 @@ export default defineAppConfig({
     searchTag: "Search meditation apps ✨",
     showFeaturedOnAllPages: true,
     featuredText: "Featured ✨",
-    tags: [{ name: "SAAS", color: "blue" }],
+    tags: [],
   },
   banner: {
     show: true,
