@@ -1,5 +1,6 @@
 <template>
-  <div class="font-display bg-white dark:bg-stone-800 transition-colors">
+  <div
+    class="font-display grid min-h-screen grid-rows-[auto,auto,1fr,auto] bg-white dark:bg-stone-800 transition-colors">
     <Banner />
     <AppNavbar />
     <slot />
