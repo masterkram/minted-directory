@@ -10,15 +10,22 @@ const colorMode = useColorMode();
 const background = computed(() => colorMode.preference === "dark" ? "bg-gray-800" : "bg-white");
 useHead({ bodyAttrs: { class: background } });
 
+defineOgImageComponent('NuxtSeo', {
+  title: 'Hello OG Image 👋',
+  description: 'Look what at me in dark mode',
+  theme: '#ff0000',
+  colorMode: 'dark',
+})
+
 
 useSeoMeta({
-  title: 'Alpha Symbol',
-  ogTitle: 'Alpha Symbol',
-  description: 'This website is dedicated to information about the greek letter alpha. We allow copy pasting the symbol easily and instructions for Mac OS, Windows and Linux.',
-  ogDescription: 'This website is dedicated to information about the greek letter alpha. We allow copy pasting the symbol easily and instructions for Mac OS, Windows and Linux.',
+  title: 'Nuxt Starters',
+  ogTitle: 'Nuxt Starters',
+  description: 'Go. ',
+  ogDescription: 'This .',
   twitterCard: 'summary_large_image',
-  twitterTitle: 'Copy Alpha Symbol',
-  twitterDescription: 'Website dedicated to copying the greek letter alpha.',
+  twitterTitle: 'go',
+  twitterDescription: 'lets',
 });
 
 
