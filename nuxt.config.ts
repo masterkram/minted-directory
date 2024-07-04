@@ -23,4 +23,13 @@ export default defineNuxtConfig({
   content: {
     documentDriven: true,
   },
+  site: {
+    name: "Nuxt Starters",
+    url: "https://nuxtdirectory.netlify.app/",
+    description: "Nuxt starter kits.",
+    defaultLocale: "en",
+  },
+  ogImage: {
+    runtimeChromium: false,
+  },
 });
