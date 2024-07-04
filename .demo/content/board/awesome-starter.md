@@ -1,4 +1,6 @@
 ---
+tags:
+  - basics
 ---
 
 # Nuxt Awesome Starter

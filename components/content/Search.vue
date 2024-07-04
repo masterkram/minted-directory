@@ -1,10 +1,22 @@
 <script setup lang="ts">
+import formatString from '../../util/formatString';
 const router = useRouter();
 
 const search: Ref<string> = useState("search");
 const selectedTags: Ref<string[]> = useState("tags", () => []);
 
-const searchTag = useAppConfig().directory.searchTag;
+const searchConfig = useAppConfig().directory.search;
+const searchTag = await getTag();
+
+async function getTag() {
+  if (searchConfig.showCount) {
+    const { data: count } = await useAsyncData('content-count', () => queryContent('/board').count());
+    return formatString(searchConfig.placeholder, count.value);
+  }
+
+  return searchConfig.placeholder;
+}
+
 
 watch(
   [search, selectedTags],
@@ -43,15 +55,21 @@ function addTag(event: any) {
 
 <template>
   <div class="mb-10 not-prose">
-    <div class="relative flex items-center">
-      <input v-model="search" ref="searchInput"
-        class="block w-full rounded-md border-0 py-2 pr-14 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6 dark:bg-stone-700 dark:ring-stone-600 dark:text-stone-200 dark:placeholder:text-stone-400"
-        :placeholder="searchTag">
-      <div class="absolute inset-y-0 right-0 flex py-1.5 pr-1.5">
-        <kbd
-          class="inline-flex items-center rounded border border-gray-200 px-1 font-sans text-xs text-gray-400 dark:border-stone-500 dark:text-stone-500">⌘K</kbd>
+    <div class="mt-2 flex rounded-md shadow-sm">
+      <div class="relative flex flex-grow items-stretch focus-within:z-10">
+        <div v-if="searchConfig.icon" class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+          <Icon :name="searchConfig.icon" class="h-5 w-5 text-gray-400" aria-hidden="true" />
+        </div>
+        <input v-model="search" ref="searchInput"
+          class="block w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6 dark:active:ring-primary-400 dark:bg-gray-700 dark:ring-gray-600 dark:text-gray-200 dark:placeholder:text-gray-400"
+          :class="searchConfig.icon ? 'pl-10' : ''" :placeholder="searchTag" />
+        <div class="absolute inset-y-0 right-0 flex py-1.5 pr-1.5">
+          <kbd
+            class="inline-flex items-center rounded border border-gray-200 px-1 font-sans text-xs text-gray-400 dark:border-gray-500 dark:text-gray-500">⌘K</kbd>
+        </div>
       </div>
     </div>
+
     <div class="flex m-0 gap-4 mt-4 py-2">
       <div v-for="myTag in selectedTags"
         class="relative group border-2 shadow-sm font-semibold text-blue-500 bg-blue-600/10 rounded-lg px-1.5 py-1 inline-flex items-center justify-center"
@@ -63,7 +81,7 @@ function addTag(event: any) {
         {{ myTag }}
       </div>
       <select :modelValue="null" @change="addTag"
-        class="border border-dashed border-gray-300 rounded-lg font-medium text-gray-500 dark:border-stone-500 dark:bg-stone-700 dark:text-stone-400 focus:ring-primary-500 focus:ring-2 focus:border-none ring-offset-4">
+        class="border border-dashed border-gray-300 rounded-lg font-medium text-gray-500 dark:border-gray-500 dark:bg-gray-700 dark:text-gray-400 focus:ring-primary-500 focus:ring-2 focus:border-none ring-offset-4">
         <option value="" disabled selected>
           <span>
             Select a tag

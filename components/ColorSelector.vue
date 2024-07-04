@@ -1,9 +1,7 @@
 <script setup lang="ts">
 const colorMode = useColorMode();
 
-const config = useAppConfig();
-const darkMode = config.nuxtIcon.aliases["dark-mode"];
-const lightMode = config.nuxtIcon.aliases["light-mode"];
+const config = useAppConfig().ui.icons;
 
 function toggleColorMode() {
   if (colorMode.value === "dark") {
@@ -16,8 +14,8 @@ function toggleColorMode() {
 
 <template>
   <div @click="toggleColorMode"
-    class="flex justify-center items-center border rounded-full w-8 h-8 text-gray-500 dark:text-stone-400 hover:bg-gray-200 dark:hover:bg-stone-800 dark:border-stone-500 transition-all">
-    <Icon v-if="colorMode.value === 'light'" :name="darkMode" />
-    <Icon v-else :name="lightMode" />
+    class="flex justify-center items-center border rounded-full w-8 h-8 text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-800 dark:border-gray-500 transition-all">
+    <Icon v-if="colorMode.value === 'light'" :name="config.dark" />
+    <Icon v-else :name="config.light" />
   </div>
 </template>

@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     "nuxt-icon",
     "@nuxthq/studio",
     "@nuxtjs/color-mode",
+    "@nuxtjs/seo",
   ],
   // https://google-fonts.nuxtjs.org/
   googleFonts: {
@@ -21,8 +22,5 @@ export default defineNuxtConfig({
   // https://content.nuxt.com/
   content: {
     documentDriven: true,
-    experimental: {
-      search: true,
-    },
   },
 });

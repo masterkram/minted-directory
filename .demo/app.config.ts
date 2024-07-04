@@ -4,44 +4,49 @@ export default defineAppConfig({
     logo: "/logo.png",
     description: "Find the the best Nuxt templates.",
   },
-  navbar: {
-    colorModeSelector: true,
-  },
   directory: {
-    searchTag: "Search nuxt templates 🔎",
+    search: {
+      placeholder: "Search among {0} nuxt templates",
+      showCount: true,
+      icon: "tabler:bow",
+    },
     showFeaturedOnAllPages: true,
     featuredText: "Featured ✨",
     tags: [
       { name: "SAAS", color: "blue" },
-      { name: "dashboard" },
+      { name: "dashboard", color: "green" },
       { name: "landing-page" },
       { name: "toolbox" },
       { name: "agency" },
       { name: "markdown-based" },
+      { name: "basics", color: "indigo" },
     ],
   },
-  banner: {
-    show: true,
-    text: "Create your own directory website in minutes.",
-    link: "https://github.com/masterkram/nuxt-directory",
-    brandText: "NuxtDirectory",
+  header: {
+    banner: {
+      show: true,
+      text: "Create your own directory website in minutes.",
+      link: "https://github.com/masterkram/nuxt-directory",
+      brandText: "NuxtDirectory",
+    },
+    navbar: {
+      colorModeSelector: true,
+    },
+    actionButton: {
+      text: "Submit a starter",
+      href: "",
+    },
   },
-  ui: {
-    displayFont: "Crimson Pro",
-    bodyFont: "Open Sans",
-    primaryColor: "",
-    secondaryColor: "",
-    grayShade: "zinc",
-  },
+  footer: {},
   socials: {
     twitter: "",
     github: "",
     mastodon: "",
   },
-  nuxtIcon: {
-    aliases: {
-      "dark-mode": "ph:moon-bold",
-      "light-mode": "ph:sun-bold",
+  ui: {
+    icons: {
+      dark: "ph:moon-bold",
+      light: "ph:sun-bold",
     },
   },
 });

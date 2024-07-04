@@ -12,6 +12,8 @@ export default {
       },
       colors: {
         primary: colors.sky,
+        secondary: colors.indigo,
+        gray: colors.zinc,
       },
     },
   },

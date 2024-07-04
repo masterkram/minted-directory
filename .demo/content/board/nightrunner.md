@@ -1,4 +1,6 @@
 ---
+tags:
+  - basics
 github: https://github.com/notKamui/Nightrunner
 ---
 # Nightrunner

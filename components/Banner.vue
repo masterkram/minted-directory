@@ -1,8 +1,8 @@
 <script setup lang="ts">
-const bannerConfig = useAppConfig().banner;
+const bannerConfig = useAppConfig().header.banner;
 
 const href = computed(() => {
-  const link = useAppConfig().banner.link;
+  const link = bannerConfig.link;
   if (link) {
     return link;
   }
