@@ -2,7 +2,4 @@
 export default defineNuxtConfig({
   extends: "../",
   devtools: { enabled: true },
-  ogImage: {
-    runtimeChromium: false,
-  },
 });

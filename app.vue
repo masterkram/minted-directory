@@ -1,32 +1,51 @@
-<template>
-  <AppLayout>
-    <NuxtPage />
-  </AppLayout>
-</template>
-
 <script setup lang="ts">
 const colorMode = useColorMode();
 
-const background = computed(() => colorMode.preference === "dark" ? "bg-gray-800" : "bg-white");
-useHead({ bodyAttrs: { class: background } });
+const background = computed(() => colorMode.value === "dark" ? "bg-gray-800" : "bg-white");
 
-defineOgImageComponent('NuxtSeo', {
-  title: 'Hello OG Image 👋',
-  description: 'Look what at me in dark mode',
-  theme: '#ff0000',
-  colorMode: 'dark',
-})
-
-
-useSeoMeta({
-  title: 'Nuxt Starters',
-  ogTitle: 'Nuxt Starters',
-  description: 'Go. ',
-  ogDescription: 'This .',
-  twitterCard: 'summary_large_image',
-  twitterTitle: 'go',
-  twitterDescription: 'lets',
-});
-
-
+const { layout } = useContent();
 </script>
+
+<template>
+
+  <Body :class="`${background}`">
+    <AppLayout>
+      <NuxtLayout :name="layout as string || 'default'">
+        <NuxtPage class="page-enter-active" />
+      </NuxtLayout>
+    </AppLayout>
+  </Body>
+</template>
+
+<style>
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(.5rem)
+  }
+
+  to {
+    opacity: 1;
+    transform: none
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(.5rem)
+  }
+}
+
+.page-enter-active {
+  animation: fadeInUp .6s forwards
+}
+
+.page-leave-active {
+  animation: fadeOutDown .6s backwards;
+}
+</style>

@@ -6,7 +6,7 @@ const props = defineProps(['tag']);
 const configTag = config.find(element => element.name === props.tag);
 
 const tagClass = computed(() => {
-  return configTag.color ? `${configTag.color}-tag` : 'gray-tag';
+  return configTag?.color ? `${configTag.color}-tag` : 'gray-tag';
 });
 </script>
 

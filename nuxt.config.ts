@@ -21,7 +21,13 @@ export default defineNuxtConfig({
   },
   // https://content.nuxt.com/
   content: {
-    documentDriven: true,
+    highlight: {
+      theme: {
+        dark: "github-dark",
+        default: "github-light",
+      },
+      langs: ["js", "ts", "html", "py", "sh"],
+    },
   },
   site: {
     name: "Nuxt Starters",

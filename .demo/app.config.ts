@@ -9,6 +9,28 @@ export default defineAppConfig({
       placeholder: "Search among {0} nuxt templates",
       showCount: true,
       icon: "tabler:bow",
+      tags: {
+        // options: none,select,show-all,
+        display: "show-all",
+        intersection: true,
+      },
+    },
+    grid: {
+      list: true,
+      emptyState: {
+        text: "No matches for this query.",
+        // options: button, simple, link
+        type: "button",
+        icon: "ph:boat-bold",
+      },
+      submit: {
+        show: true,
+        first: false,
+        title: "Submit a template",
+        description:
+          "Submit a template to show off a good project to other people.",
+        hideable: true,
+      },
     },
     showFeaturedOnAllPages: true,
     featuredText: "Featured ✨",
@@ -34,7 +56,7 @@ export default defineAppConfig({
     },
     actionButton: {
       text: "Submit a starter",
-      href: "",
+      href: "/submit",
     },
   },
   footer: {},

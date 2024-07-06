@@ -6,13 +6,15 @@ layout: wide
 # All Best Nuxt [Starter Templates] 
 
 #description
-Find the the best Nuxt templates that can help you take your project from idea to built quickly.
+Discover the top Nuxt templates to accelerate your project's development from concept to completion.
 
-Filter based on price and purpose.
+Easily filter by price and purpose to find the perfect match for your needs.
 
-long term podcast, vivek trump.
+Our goals for this site:
++ Accelerated Development
++ Tailored Selection
++ High-Quality Choices
 
-it was clear they were there. The hot swap is coming.
 ::
 
 :search
