@@ -33,6 +33,6 @@ watch(
     <SubmitBox v-if="config.submit.show && config.submit.first" />
     <DirectoryItem v-for="i in data" :item="i" />
     <SubmitBox v-if="config.submit.show && !config.submit.first" />
-    <EmptyQueryIndicator v-if="data?.length === 0" />
+    <DirectoryEmptyQueryIndicator v-if="data?.length === 0" />
   </div>
 </template>

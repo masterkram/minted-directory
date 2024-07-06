@@ -2,7 +2,6 @@ export default defineAppConfig({
   general: {
     title: "Nuxtjs Starters",
     logo: "/logo.png",
-    description: "Find the the best Nuxt templates.",
   },
   directory: {
     search: {
@@ -12,11 +11,11 @@ export default defineAppConfig({
       tags: {
         // options: none,select,show-all,
         display: "show-all",
-        intersection: true,
+        intersection: false,
       },
     },
     grid: {
-      list: true,
+      list: false,
       emptyState: {
         text: "No matches for this query.",
         // options: button, simple, link
@@ -59,11 +58,13 @@ export default defineAppConfig({
       href: "/submit",
     },
   },
-  footer: {},
-  socials: {
-    twitter: "",
-    github: "",
-    mastodon: "",
+  footer: {
+    description: "Find the the best Nuxt templates.",
+    socials: {
+      twitter: "",
+      github: "",
+      mastodon: "",
+    },
   },
   ui: {
     icons: {

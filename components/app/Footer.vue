@@ -8,7 +8,7 @@ const navigation = [{ name: "Home", href: "/" }, { name: "Blog", href: "/blog" }
     <div class="max-w-prose mx-auto py-6 flex justify-between">
       <div class="space-y-2">
         <AppLogo />
-        <p class="text-gray-500">{{ config.general.description }}</p>
+        <p class="text-gray-500">{{ config.footer.description }}</p>
         <div>
           <NuxtLink>
             <!-- <Icon :name="" /> -->

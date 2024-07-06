@@ -21,6 +21,9 @@ export default defineNuxtConfig({
   },
   // https://content.nuxt.com/
   content: {
+    documentDriven: {
+      injectPage: false,
+    },
     highlight: {
       theme: {
         dark: "github-dark",

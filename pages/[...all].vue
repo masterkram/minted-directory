@@ -26,9 +26,9 @@ defineOgImageComponent('NuxtSeo', {
   <div class="document-driven-page">
     <ContentRenderer v-if="page" :key="(page as any)._id" :value="page">
       <template #empty="{ value }">
-        <DocumentDrivenEmpty :value="value" />
+        <DocumentEmpty :value="value" />
       </template>
     </ContentRenderer>
-    <DocumentDrivenNotFound v-else />
+    <DocumentNotFound v-else />
   </div>
 </template>

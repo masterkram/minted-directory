@@ -2,176 +2,296 @@ import { field, group } from "@nuxthq/studio/theme";
 
 export default defineNuxtSchema({
   appConfig: {
-    directory: group({}),
-    ui: group({
-      title: "UI",
-      description: "UI Customization.",
-      icon: "i-mdi-palette-outline",
+    general: group({
+      title: "General",
+      description: "General configuration for the app.",
       fields: {
-        icons: group({
-          title: "Icons",
-          description: "Manage icons used in UI Pro.",
-          icon: "i-mdi-application-settings-outline",
-          fields: {
-            dark: field({
-              type: "icon",
-              title: "Dark mode",
-              description: "Icon of color mode button for dark mode.",
-              icon: "i-mdi-moon-waning-crescent",
-              default: "i-heroicons-moon-20-solid",
-            }),
-            light: field({
-              type: "icon",
-              title: "Light mode",
-              description: "Icon of color mode button for light mode.",
-              icon: "i-mdi-white-balance-sunny",
-              default: "i-heroicons-sun-20-solid",
-            }),
-            external: field({
-              type: "icon",
-              title: "External Link",
-              description: "Icon for external link.",
-              icon: "i-mdi-arrow-top-right",
-              default: "i-heroicons-arrow-up-right-20-solid",
-            }),
-            chevron: field({
-              type: "icon",
-              title: "Chevron",
-              description: "Icon for chevron.",
-              icon: "i-mdi-chevron-down",
-              default: "i-heroicons-chevron-down-20-solid",
-            }),
-          },
-        }),
-        primary: field({
+        title: field({
           type: "string",
-          title: "Primary",
-          description: "Primary color of your UI.",
-          icon: "i-mdi-palette-outline",
-          default: "green",
-          required: [
-            "sky",
-            "mint",
-            "rose",
-            "amber",
-            "violet",
-            "emerald",
-            "fuchsia",
-            "indigo",
-            "lime",
-            "orange",
-            "pink",
-            "purple",
-            "red",
-            "teal",
-            "yellow",
-            "green",
-            "blue",
-            "cyan",
-            "gray",
-            "white",
-            "black",
-          ],
+          title: "Title",
+          description: "Title of the application.",
+          default: "Nuxtjs Starters",
         }),
-        gray: field({
-          type: "string",
-          title: "Gray",
-          description: "Gray color of your UI.",
-          icon: "i-mdi-palette-outline",
-          default: "slate",
-          required: ["slate", "cool", "zinc", "neutral", "stone"],
+        logo: field({
+          type: "media",
+          title: "Logo",
+          description: "Logo of the application.",
+          default: "/logo.png",
         }),
       },
     }),
-    seo: group({
-      title: "SEO",
-      description: "SEO configuration.",
-      icon: "i-ph-app-window",
+    directory: group({
+      title: "Directory",
+      description: "Directory configuration.",
       fields: {
-        siteName: field({
+        search: group({
+          title: "Search",
+          description: "Search settings for the directory.",
+          fields: {
+            placeholder: field({
+              type: "string",
+              title: "Placeholder",
+              description: "Placeholder text for the search input.",
+              default: "Search among {0} nuxt templates",
+            }),
+            showCount: field({
+              type: "boolean",
+              title: "Show Count",
+              description: "Show the number of search results.",
+              default: true,
+            }),
+            icon: field({
+              type: "icon",
+              title: "Icon",
+              description: "Icon for the search input.",
+              default: "tabler:bow",
+            }),
+            tags: group({
+              title: "Tags",
+              description: "Tag settings for the search.",
+              fields: {
+                display: field({
+                  type: "string",
+                  title: "Display",
+                  description: "Display option for tags.",
+                  default: "show-all",
+                  required: ["none", "select", "show-all"],
+                }),
+                intersection: field({
+                  type: "boolean",
+                  title: "Intersection",
+                  description: "Use intersection for tags.",
+                  default: false,
+                }),
+              },
+            }),
+          },
+        }),
+        grid: group({
+          title: "Grid",
+          description: "Grid settings for the directory.",
+          fields: {
+            list: field({
+              type: "boolean",
+              title: "List",
+              description: "Display as list.",
+              default: false,
+            }),
+            emptyState: group({
+              title: "Empty State",
+              description: "Settings for the empty state.",
+              fields: {
+                text: field({
+                  type: "string",
+                  title: "Text",
+                  description: "Text to display when no matches are found.",
+                  default: "No matches for this query.",
+                }),
+                type: field({
+                  type: "string",
+                  title: "Type",
+                  description: "Type of empty state.",
+                  default: "button",
+                  required: ["button", "simple", "link"],
+                }),
+                icon: field({
+                  type: "icon",
+                  title: "Icon",
+                  description: "Icon for the empty state.",
+                  default: "ph:boat-bold",
+                }),
+              },
+            }),
+            submit: group({
+              title: "Submit",
+              description: "Settings for the submit button.",
+              fields: {
+                show: field({
+                  type: "boolean",
+                  title: "Show",
+                  description: "Show the submit button.",
+                  default: true,
+                }),
+                first: field({
+                  type: "boolean",
+                  title: "First",
+                  description: "Show first submit button.",
+                  default: false,
+                }),
+                title: field({
+                  type: "string",
+                  title: "Title",
+                  description: "Title for the submit button.",
+                  default: "Submit a template",
+                }),
+                description: field({
+                  type: "string",
+                  title: "Description",
+                  description: "Description for the submit button.",
+                  default:
+                    "Submit a template to show off a good project to other people.",
+                }),
+                hideable: field({
+                  type: "boolean",
+                  title: "Hideable",
+                  description: "Allow hiding the submit button.",
+                  default: true,
+                }),
+              },
+            }),
+          },
+        }),
+        showFeaturedOnAllPages: field({
+          type: "boolean",
+          title: "Show Featured On All Pages",
+          description: "Show featured items on all pages.",
+          default: true,
+        }),
+        featuredText: field({
           type: "string",
-          title: "Site Name",
-          description:
-            "Name used in ogSiteName and used as second part of your page title (My page title - Nuxt UI Pro).",
-          icon: "i-mdi-web",
-          default: [],
+          title: "Featured Text",
+          description: "Text to display for featured items.",
+          default: "Featured ✨",
+        }),
+        tags: field({
+          type: "array",
+          title: "Tags",
+          description: "Tags for the directory.",
+          default: [
+            { name: "SAAS", color: "blue" },
+            { name: "dashboard", color: "green" },
+            { name: "landing-page" },
+            { name: "toolbox" },
+            { name: "agency" },
+            { name: "markdown-based" },
+            { name: "basics", color: "indigo" },
+          ],
         }),
       },
     }),
     header: group({
       title: "Header",
       description: "Header configuration.",
-      icon: "i-mdi-page-layout-header",
       fields: {
-        logo: group({
-          title: "Logo",
-          description: "Header logo configuration.",
-          icon: "i-mdi-image-filter-center-focus-strong-outline",
+        banner: group({
+          title: "Banner",
+          description: "Banner settings for the header.",
           fields: {
-            light: field({
-              type: "media",
-              title: "Light Mode Logo",
-              description: "Pick an image from your gallery.",
-              icon: "i-mdi-white-balance-sunny",
-              default: "",
+            show: field({
+              type: "boolean",
+              title: "Show",
+              description: "Show the banner.",
+              default: true,
             }),
-            dark: field({
-              type: "media",
-              title: "Dark Mode Logo",
-              description: "Pick an image from your gallery.",
-              icon: "i-mdi-moon-waning-crescent",
-              default: "",
-            }),
-            alt: field({
+            text: field({
               type: "string",
-              title: "Alt",
-              description: "Alt to display for accessibility.",
-              icon: "i-mdi-alphabet-latin",
-              default: "",
+              title: "Text",
+              description: "Text to display in the banner.",
+              default: "Create your own directory website in minutes.",
+            }),
+            link: field({
+              type: "string",
+              title: "Link",
+              description: "Link for the banner.",
+              default: "https://github.com/masterkram/nuxt-directory",
+            }),
+            brandText: field({
+              type: "string",
+              title: "Brand Text",
+              description: "Brand text for the banner.",
+              default: "NuxtDirectory",
             }),
           },
         }),
-        colorMode: field({
-          type: "boolean",
-          title: "Color Mode",
-          description: "Hide or display the color mode button in your header.",
-          icon: "i-mdi-moon-waning-crescent",
-          default: true,
+        navbar: group({
+          title: "Navbar",
+          description: "Navbar settings for the header.",
+          fields: {
+            colorModeSelector: field({
+              type: "boolean",
+              title: "Color Mode Selector",
+              description: "Show the color mode selector in the navbar.",
+              default: true,
+            }),
+          },
         }),
-        links: field({
-          type: "array",
-          title: "Links",
-          description: "Array of link object displayed in header.",
-          icon: "i-mdi-link-variant",
-          default: [],
+        actionButton: group({
+          title: "Action Button",
+          description: "Action button settings for the header.",
+          fields: {
+            text: field({
+              type: "string",
+              title: "Text",
+              description: "Text for the action button.",
+              default: "Submit a starter",
+            }),
+            href: field({
+              type: "string",
+              title: "Href",
+              description: "Link for the action button.",
+              default: "/submit",
+            }),
+          },
         }),
       },
     }),
     footer: group({
       title: "Footer",
       description: "Footer configuration.",
-      icon: "i-mdi-page-layout-footer",
       fields: {
-        credits: field({
+        description: field({
           type: "string",
-          title: "Footer credits section",
-          description: "Text to display as credits in the footer.",
-          icon: "i-mdi-circle-edit-outline",
-          default: "",
+          title: "Description",
+          description: "Description to display in the footer.",
+          default: "Find the the best Nuxt templates.",
         }),
-        colorMode: field({
-          type: "boolean",
-          title: "Color Mode",
-          description: "Hide or display the color mode button in the footer.",
-          icon: "i-mdi-moon-waning-crescent",
-          default: false,
+        socials: group({
+          title: "Socials",
+          description: "Social links for the footer.",
+          fields: {
+            twitter: field({
+              type: "string",
+              title: "Twitter",
+              description: "Twitter link.",
+              default: "",
+            }),
+            github: field({
+              type: "string",
+              title: "GitHub",
+              description: "GitHub link.",
+              default: "",
+            }),
+            mastodon: field({
+              type: "string",
+              title: "Mastodon",
+              description: "Mastodon link.",
+              default: "",
+            }),
+          },
         }),
-        links: field({
-          type: "array",
-          title: "Links",
-          description: "Array of link object displayed in footer.",
-          icon: "i-mdi-link-variant",
-          default: [],
+      },
+    }),
+    ui: group({
+      title: "UI",
+      description: "UI Customization.",
+      fields: {
+        icons: group({
+          title: "Icons",
+          description: "Manage icons used in UI.",
+          fields: {
+            dark: field({
+              type: "icon",
+              title: "Dark mode",
+              description: "Icon of color mode button for dark mode.",
+              default: "ph:moon-bold",
+            }),
+            light: field({
+              type: "icon",
+              title: "Light mode",
+              description: "Icon of color mode button for light mode.",
+              default: "ph:sun-bold",
+            }),
+          },
         }),
       },
     }),
