@@ -10,7 +10,7 @@ export default defineAppConfig({
       icon: "tabler:bow",
       tags: {
         // options: none,select,show-all,
-        display: "show-all",
+        display: "select",
         intersection: false,
       },
     },
