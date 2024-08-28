@@ -2,7 +2,7 @@
 sponsored: 1
 ---
 
-# Getting Started With NuxtDirectory
+# Getting Started With GoatedDirectory
 
 Study successful examples of directory websites and quickly start your own with **nuxt directory**.
 

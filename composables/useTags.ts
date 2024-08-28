@@ -21,6 +21,8 @@ export function useTags() {
     const select = event.target as HTMLSelectElement;
     const selectedValue = select.value;
 
+    console.log(event);
+
     addTagByName(selectedValue);
     select.value = "";
   }

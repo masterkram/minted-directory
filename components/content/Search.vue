@@ -6,9 +6,9 @@ const search: Ref<string> = useState("search");
 const selectedTags: Ref<string[]> = useState("tags", () => []);
 
 const searchConfig = useAppConfig().directory.search;
-const searchTag = await getTag();
+const searchPlaceholder = await getSearchPlaceholder();
 
-async function getTag() {
+async function getSearchPlaceholder() {
   if (searchConfig.showCount) {
     const { data: count } = await useAsyncData('content-count', () => queryContent('/board').count());
     return formatString(searchConfig.placeholder, count.value);
@@ -18,14 +18,15 @@ async function getTag() {
 }
 
 
-watch(
-  [search, selectedTags],
-  () => {
-    router.push({
-      query: { search: search.value.trim(), tags: selectedTags.value },
-    });
-  },
-);
+// watch(
+//   [search, selectedTags],
+//   () => {
+//     router.push({
+//       query: { search: search.value.trim(), tags: selectedTags.value },
+//     });
+//   },
+//   { deep: true }
+// );
 
 const searchInput = useKeyFocus();
 </script>
@@ -39,7 +40,7 @@ const searchInput = useKeyFocus();
         </div>
         <input v-model="search" ref="searchInput"
           class="block w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6 dark:active:ring-primary-400 dark:bg-gray-700 dark:ring-gray-600 dark:text-gray-200 dark:placeholder:text-gray-400"
-          :class="searchConfig.icon ? 'pl-10' : ''" :placeholder="searchTag" />
+          :class="searchConfig.icon ? 'pl-10' : ''" :placeholder="searchPlaceholder" />
         <div class="absolute inset-y-0 right-0 flex py-1.5 pr-1.5">
           <kbd
             class="inline-flex items-center rounded border border-gray-200 px-1 font-sans text-xs text-gray-400 dark:border-gray-500 dark:text-gray-500">⌘K</kbd>

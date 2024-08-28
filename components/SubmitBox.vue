@@ -12,7 +12,9 @@ const hidden: Ref<boolean> = useCookie('hide-submit-box');
     <p class="font-bold dark:text-white">{{ config.submit.title }}</p>
     <p>{{ config.submit.description }}</p>
     <div class="flex gap-2 mt-3">
-      <Button icon="ph:rocket">Submit</Button>
+      <NuxtLink to="/submit">
+        <Button icon="ph:rocket">Submit</Button>
+      </NuxtLink>
       <Button @click="() => hidden = true" color="secondary">Hide this</Button>
     </div>
   </div>

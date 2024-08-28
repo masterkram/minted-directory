@@ -20,6 +20,8 @@ defineOgImageComponent('NuxtSeo', {
   theme: '#ff0000',
   colorMode: 'dark',
 });
+
+definePageMeta({ middleware: ['search-from-url'] })
 </script>
 
 <template>

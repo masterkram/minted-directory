@@ -23,6 +23,7 @@
     "@nuxtjs/google-fonts": "^3.2.0",
     "@nuxtjs/seo": "2.0.0-rc.11",
     "@nuxtjs/tailwindcss": "^6.12.0",
-    "nuxt-icon": "^0.6.10"
+    "nuxt-icon": "^0.6.10",
+    "@nuxtjs/color-mode": "^3.4.2"
   }
 }

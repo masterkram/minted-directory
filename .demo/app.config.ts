@@ -10,7 +10,7 @@ export default defineAppConfig({
       icon: "tabler:bow",
       tags: {
         // options: none,select,show-all,
-        display: "show-all",
+        display: "select",
         intersection: false,
       },
     },
@@ -48,7 +48,7 @@ export default defineAppConfig({
       show: true,
       text: "Create your own directory website in minutes.",
       link: "https://github.com/masterkram/nuxt-directory",
-      brandText: "NuxtDirectory",
+      brandText: "GoatedDirectory",
     },
     navbar: {
       colorModeSelector: true,
