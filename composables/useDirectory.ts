@@ -34,7 +34,7 @@ export function useDirectory() {
   watch(
     [search, tags],
     () => {
-      refresh();
+      directoryData.refresh();
     },
     { deep: true }
   );

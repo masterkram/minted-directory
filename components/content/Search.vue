@@ -18,15 +18,15 @@ async function getSearchPlaceholder() {
 }
 
 
-watch(
-  [search, selectedTags],
-  () => {
-    router.push({
-      query: { search: search.value.trim(), tags: selectedTags.value },
-    });
-  },
-  { deep: true }
-);
+// watch(
+//   [search, selectedTags],
+//   () => {
+//     router.push({
+//       query: { search: search.value.trim(), tags: selectedTags.value },
+//     });
+//   },
+//   { deep: true }
+// );
 
 const searchInput = useKeyFocus();
 </script>
