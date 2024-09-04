@@ -10,7 +10,7 @@ const searchPlaceholder = await getSearchPlaceholder();
 
 async function getSearchPlaceholder() {
   if (searchConfig.showCount) {
-    const { data: count } = await useAsyncData('content-count', () => queryContent('/board').count());
+    const { data: count } = await useAsyncData('content-count', () => queryContent('/dir').count());
     return formatString(searchConfig.placeholder, count.value);
   }
 

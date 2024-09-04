@@ -4,7 +4,7 @@ tags:
 sponsored: 1
 ---
 
-# Goated Directory 🐐
+# Minted Directory 🐐
 
 Starter template for directory websites. A directory website is designed to organize and display a categorized list of businesses, services, products, or other resources.
 
@@ -23,10 +23,10 @@ Create a directory website very quickly. Because the website is based on markdow
 - Search with tags / categories.
 - Edit with notion-like editor [nuxt studio](). 🏝️
 - No database creation, migration, deployments needed, data lives in markdown files. 📁
-- configurable with **100+** settings. ⚙️
+- configurable with **32+** settings. ⚙️
 - automatic rss feed. 📫
 - Free for commercial use. 🏦
-- Includes 50+ components specific to directory websites that can be included in markdown.
+- Includes 9+ components specific to directory websites that can be included in markdown.
 
 
 ## Tech Stack
@@ -39,28 +39,19 @@ Create a directory website very quickly. Because the website is based on markdow
 
 ## Getting Started
 
-There are two ways to get started with SeaRaider directory.
+There are two ways to get started with **Minted Directory**.
 As a non technical person and as a developer, follow whichever guide most suits you.
 
 ### Non technical start
+Click one of the deployment buttons.
+You need to choose one of *vercel*, *netlify* or *cloudflare*. These are cloud providers which will run the website for you. It does not matter much which one you pick they will host a free version of your directory website until it gets too many requests.
+
+vercel:
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/masterkram/minted-directory-template)
+
+netlify:
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/masterkram/minted-directory-template)
 
 ### Developer Start
 
-Create a new nuxt project locally, here I have chosen the name `mydirectory` for the project.
-Select the initialization options as needed.
-
-```sh
-npx nuxi@latest mydirectory
-```
-
-Edit the automatically generated `nuxt.config.ts` file, by adding the extends key with the following url `TODO` as show below.
-
-```ts
-// https://nuxt.com/docs/api/configuration/nuxt-config
-export default defineNuxtConfig({
-  extends: "TODO",
-  devtools: { enabled: true },
-});
-```
-
-You are now ready to begin.
+Clone this [project](https://github.com/masterkram/minted-directory-template) and use it as a base. You can deploy it to any VPS or cloud provider. by following this [guide](https://nuxt.com/docs/getting-started/deployment).

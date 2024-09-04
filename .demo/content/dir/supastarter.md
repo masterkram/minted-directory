@@ -4,12 +4,6 @@ tags:
   - SAAS
 ---
 
-+ summary text
-+ benefits
-+ features
-+ tech stack
-+ using it.
-
 # Supastarter
 
 Extensive paid SaaS boilerplate with many key features.

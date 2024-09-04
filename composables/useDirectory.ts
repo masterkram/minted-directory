@@ -7,7 +7,7 @@ export function useDirectory() {
   const directoryData = useAsyncData(
     "board",
     () => {
-      const query = queryContent("/board");
+      const query = queryContent("/dir");
 
       if (search.value) {
         query.where({

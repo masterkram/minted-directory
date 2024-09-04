@@ -2,19 +2,17 @@
 const colorMode = useColorMode();
 
 const background = computed(() => colorMode.value === "dark" ? "bg-gray-800" : "bg-white");
+useHead({ bodyAttrs: { class: background } });
 
 const { layout } = useContent();
 </script>
 
 <template>
-
-  <Body :class="`${background}`">
-    <AppLayout>
-      <NuxtLayout :name="layout as string || 'default'">
-        <NuxtPage class="page-enter-active" />
-      </NuxtLayout>
-    </AppLayout>
-  </Body>
+  <AppLayout>
+    <NuxtLayout :name="layout as string || 'default'">
+      <NuxtPage class="page-enter-active" />
+    </NuxtLayout>
+  </AppLayout>
 </template>
 
 <style>
