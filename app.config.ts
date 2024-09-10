@@ -2,7 +2,6 @@ export default defineAppConfig({
   general: {
     title: "Nuxtjs Starters",
     logo: "/logo.png",
-    description: "Find the the best Nuxt templates.",
   },
   directory: {
     search: {
@@ -11,16 +10,22 @@ export default defineAppConfig({
       icon: "tabler:bow",
       tags: {
         // options: none,select,show-all,
-        type: "select",
+        display: "select",
+        intersection: false,
       },
     },
     grid: {
-      list: true,
+      list: false,
       emptyState: {
-        text: "No matches for this query.",
+        text: "Seems that this entry is missing from the archives.",
         // options: button, simple, link
         type: "button",
-        icon: "ph:boat-bold",
+        icon: "ph:exclamation-mark",
+      },
+      card: {
+        image: true,
+        // options: dashed, shadow, outline
+        border: "shadow",
       },
       submit: {
         show: true,
@@ -31,9 +36,21 @@ export default defineAppConfig({
         hideable: true,
       },
     },
-    showFeaturedOnAllPages: true,
-    featuredText: "Featured ✨",
-    tags: [],
+    featured: {
+      showOnAllPages: true,
+      showOnSide: true,
+      icon: "tabler:star",
+      labelForCard: "Featured ✨",
+    },
+    tags: [
+      { name: "SAAS", color: "blue" },
+      { name: "dashboard", color: "green" },
+      { name: "landing-page" },
+      { name: "toolbox" },
+      { name: "agency" },
+      { name: "markdown-based" },
+      { name: "basics", color: "indigo" },
+    ],
   },
   header: {
     banner: {
@@ -50,11 +67,30 @@ export default defineAppConfig({
       href: "/submit",
     },
   },
-  footer: {},
-  socials: {
-    twitter: "",
-    github: "",
-    mastodon: "",
+  footer: {
+    description: "Find the the best Nuxt templates.",
+    socials: {
+      github: {
+        link: "test",
+        icon: "ph:github-logo",
+      },
+      facebook: {
+        link: "test",
+        icon: "ph:facebook-logo",
+      },
+      instagram: {
+        link: "test",
+        icon: "ph:instagram-logo",
+      },
+      x: {
+        link: "test",
+        icon: "ph:twitter-logo",
+      },
+      youtube: {
+        link: "test",
+        icon: "ph:youtube-logo",
+      },
+    },
   },
   ui: {
     icons: {

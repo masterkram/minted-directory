@@ -102,6 +102,25 @@ export default defineNuxtSchema({
                 }),
               },
             }),
+            card: group({
+              title: "Listing Card",
+              description: "Settings on how to display individual cards.",
+              fields: {
+                image: field({
+                  type: "boolean",
+                  title: "Image",
+                  description: "Images on cards",
+                  default: false,
+                }),
+                border: field({
+                  type: "string",
+                  title: "Type",
+                  description: "Type of empty state.",
+                  default: "dashed",
+                  required: ["dashed", "shadow", "outline"],
+                }),
+              },
+            }),
             submit: group({
               title: "Submit",
               description: "Settings for the submit button.",
@@ -249,23 +268,57 @@ export default defineNuxtSchema({
           title: "Socials",
           description: "Social links for the footer.",
           fields: {
-            twitter: field({
-              type: "string",
-              title: "Twitter",
-              description: "Twitter link.",
-              default: "",
+            github: group({
+              fields: {
+                link: field({
+                  type: "string",
+                  title: "Github Link",
+                  description: "Link to github profile",
+                }),
+                icon: field({
+                  type: "icon",
+                  title: "Github Icon",
+                }),
+              },
             }),
-            github: field({
-              type: "string",
-              title: "GitHub",
-              description: "GitHub link.",
-              default: "",
+            x: group({
+              fields: {
+                link: field({
+                  type: "string",
+                  title: "X Link",
+                  description: "Link to X profile",
+                }),
+                icon: field({
+                  type: "icon",
+                  title: "X icon",
+                }),
+              },
             }),
-            mastodon: field({
-              type: "string",
-              title: "Mastodon",
-              description: "Mastodon link.",
-              default: "",
+            instagram: group({
+              fields: {
+                link: field({
+                  type: "string",
+                  title: "Instagram Link",
+                  description: "Link to Instagram Profile",
+                }),
+                icon: field({
+                  type: "icon",
+                  title: "Instagram Icon",
+                }),
+              },
+            }),
+            youtube: group({
+              fields: {
+                link: field({
+                  type: "string",
+                  title: "Youtube Link",
+                  description: "Link to Youtube Account",
+                }),
+                icon: field({
+                  type: "icon",
+                  title: "Youtube Icon",
+                }),
+              },
             }),
           },
         }),
