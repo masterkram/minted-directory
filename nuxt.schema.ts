@@ -199,7 +199,7 @@ export default defineNuxtSchema({
               type: "string",
               title: "Brand Text",
               description: "Brand text for the banner.",
-              default: "GoatedDirectory",
+              default: "MintedDirectory",
             }),
           },
         }),

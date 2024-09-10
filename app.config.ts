@@ -40,7 +40,7 @@ export default defineAppConfig({
       show: true,
       text: "Create your own directory website in minutes.",
       link: "https://github.com/masterkram/nuxt-directory",
-      brandText: "GoatedDirectory",
+      brandText: "MintedDirectory",
     },
     navbar: {
       colorModeSelector: true,

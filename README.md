@@ -1,17 +1,19 @@
-<h1 style="text-align: center">Nuxt Directory 📚</h1>
+<h1 style="text-align: center">Minted Directory 📚</h1>
 
 
-<img src="" />
+<img src=".demo/public/directory_screenshot.png" />
 
-<a href="https://nuxtdirectory.netlify.app/">demo</a>
+<div style="text-align: center;">
+  <a href="https://nuxtdirectory.netlify.app/">demo 🍫</a>
+</div>
 
 ---
 
-A markdown driven directory website built with nuxt.
+Minted directory is a markdown based directory website template. This template is based on [nuxt](https://nuxt.com/).
 
 Make your own directory website by customizing markdown pages.
 
-One markdown page represents every business, tool or listing that you want to display on your directory website.
+Each markdown page located in the `content/dir` folder represents a business, tool or listing that you want to display on your directory website.
 
 ## What is a directory website?
 

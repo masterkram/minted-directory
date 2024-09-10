@@ -4,12 +4,15 @@ tags:
   - toolbox
 demo: https://agency-os.vercel.app/
 github: https://github.com/directus-labs/agency-os
+card_image: /agency-os.png 
 ---
 
 
 # Agency OS
 
-Combination of key hackable tools to run any type of digital agency. Created by **Directus** and **NuxtLabs**.
+Combination of key hackable tools to run any type of digital agency.
+
+Created by **Directus** and **NuxtLabs**.
 
 Agency OS is heavily based on using **Directus** as a backend as a service, this will store all of the data related to your agency, projects and clients.
 

@@ -1,6 +1,8 @@
 <script setup lang="ts">
 const config = useAppConfig();
 const navigation = [{ name: "Home", href: "/" }, { name: "Blog", href: "/blog" }];
+
+const socials = computed(() => Object.values(config.footer?.socials).filter(i => i.val && i.link));
 </script>
 
 <template>
@@ -9,9 +11,10 @@ const navigation = [{ name: "Home", href: "/" }, { name: "Blog", href: "/blog" }
       <div class="space-y-2">
         <AppLogo />
         <p class="text-gray-500">{{ config.footer.description }}</p>
-        <div>
-          <NuxtLink>
-            <!-- <Icon :name="" /> -->
+        <div class="flex gap-2">
+          {{ socials }}
+          <NuxtLink v-for="item in socials" :to="item.link">
+            <Icon size="20" class="dark:text-gray-400" :name="item.icon" />
           </NuxtLink>
         </div>
       </div>

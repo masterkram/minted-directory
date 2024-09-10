@@ -6,7 +6,9 @@ sponsored: 1
 
 # Minted Directory 🐐
 
-Starter template for directory websites. A directory website is designed to organize and display a categorized list of businesses, services, products, or other resources.
+Starter template for directory websites.
+
+A directory website is designed to organize and display a categorized list of businesses, services, products, or other resources.
 
 ## Benefits:
 

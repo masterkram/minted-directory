@@ -17,10 +17,15 @@ export default defineAppConfig({
     grid: {
       list: false,
       emptyState: {
-        text: "No matches for this query.",
+        text: "Seems that this entry is missing from the archives.",
         // options: button, simple, link
         type: "button",
-        icon: "ph:boat-bold",
+        icon: "ph:exclamation-mark",
+      },
+      card: {
+        image: true,
+        // options: dashed, shadow, outline
+        border: "shadow",
       },
       submit: {
         show: true,
@@ -31,8 +36,12 @@ export default defineAppConfig({
         hideable: true,
       },
     },
-    showFeaturedOnAllPages: true,
-    featuredText: "Featured ✨",
+    featured: {
+      showOnAllPages: true,
+      showOnSide: true,
+      icon: "tabler:star",
+      labelForCard: "Featured ✨",
+    },
     tags: [
       { name: "SAAS", color: "blue" },
       { name: "dashboard", color: "green" },
@@ -48,7 +57,7 @@ export default defineAppConfig({
       show: true,
       text: "Create your own directory website in minutes.",
       link: "https://github.com/masterkram/nuxt-directory",
-      brandText: "GoatedDirectory",
+      brandText: "MintedDirectory",
     },
     navbar: {
       colorModeSelector: true,
@@ -61,9 +70,26 @@ export default defineAppConfig({
   footer: {
     description: "Find the the best Nuxt templates.",
     socials: {
-      twitter: "",
-      github: "",
-      mastodon: "",
+      github: {
+        link: "",
+        icon: "ph:github-logo",
+      },
+      facebook: {
+        link: "test",
+        icon: "ph:facebook-logo",
+      },
+      instagram: {
+        link: "test",
+        icon: "ph:instagram-logo",
+      },
+      x: {
+        link: "test",
+        icon: "ph:twitter-logo",
+      },
+      youtube: {
+        link: "test",
+        icon: "ph:youtube-logo",
+      },
     },
   },
   ui: {

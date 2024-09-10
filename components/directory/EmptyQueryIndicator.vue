@@ -6,11 +6,18 @@ const config = useAppConfig().directory.grid;
   <div class="col-span-4">
     <p v-if="config.emptyState.type === 'simple'">{{ config.emptyState.text }}</p>
     <NuxtLink to="/submit" v-if="config.emptyState.type === 'link'">{{ config.emptyState.text }}</NuxtLink>
-    <NuxtLink class="inline-flex items-center gap-1 bg-primary-400/10 rounded px-2 py-1 text-primary-500" to="/submit"
+    <div
+      class="border border-dashed border-gray-200 dark:border-gray-500 flex flex-col items-center justify-center gap-3 rounded px-2 py-12"
       v-if="config.emptyState.type === 'button'">
-      <Icon :name="config.emptyState.icon" />
-      <span>{{
-      config.emptyState.text }}</span>
-    </NuxtLink>
+      <Icon size="50" :name="config.emptyState.icon" />
+      <p>
+        {{ config.emptyState.text }}
+      </p>
+      <NuxtLink class="bg-primary-500 rounded" to="/submit">
+        <Button>
+          Be the first to add it
+        </Button>
+      </NuxtLink>
+    </div>
   </div>
 </template>

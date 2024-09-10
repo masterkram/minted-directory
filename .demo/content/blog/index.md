@@ -4,6 +4,6 @@ layout: wide
 
 # Blog
 
-Welcome to the blog.
+Welcome to the nuxt starters blog. 👀📚
 
 :blogGrid
