@@ -14,7 +14,7 @@ onLoaded((Tally: any) => {
 });
 
 onMounted(() => {
-  if (Tally !== undefined) {
+  if (typeof Tally !== 'undefined') {
     loadTally();
   }
 }
