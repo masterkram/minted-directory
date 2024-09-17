@@ -42,7 +42,4 @@ export default defineNuxtConfig({
   ogImage: {
     runtimeChromium: false,
   },
-  studio: {
-    enabled: true,
-  },
 });
