@@ -10,7 +10,7 @@ export default defineNuxtSchema({
           type: "string",
           title: "Title",
           description: "Title of the application.",
-          default: "Nuxtjs Starters",
+          default: "New Directory",
         }),
         logo: field({
           type: "media",
@@ -31,8 +31,9 @@ export default defineNuxtSchema({
             placeholder: field({
               type: "string",
               title: "Placeholder",
-              description: "Placeholder text for the search input.",
-              default: "Search among {0} nuxt templates",
+              description:
+                "Placeholder text for the search input. Use {0} to mark where to fill in the number of listings.",
+              default: "Search among {0} tools",
             }),
             showCount: field({
               type: "boolean",

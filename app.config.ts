@@ -1,11 +1,11 @@
 export default defineAppConfig({
   general: {
-    title: "Nuxtjs Starters",
+    title: "Minted Directory",
     logo: "/logo.png",
   },
   directory: {
     search: {
-      placeholder: "Search among {0} nuxt templates",
+      placeholder: "Search among {0} tools",
       showCount: true,
       icon: "tabler:bow",
       tags: {
@@ -68,7 +68,7 @@ export default defineAppConfig({
     },
   },
   footer: {
-    description: "Find the the best Nuxt templates.",
+    description: "Best directory for my niche.",
     socials: {
       github: {
         link: "test",

@@ -10,11 +10,7 @@ const props = defineProps({
 });
 
 
-useHead({
-  script: {
-    src: 'https://platform.twitter.com/widgets.js'
-  }
-});
+const { onLoaded } = useScript('https://platform.twitter.com/widgets.js');
 
 function createTweet() {
   const tweetContainer = document.getElementById(id);
@@ -38,7 +34,7 @@ function switchTweetTheme(currentTheme, targetTheme) {
   });
 }
 
-onMounted(() => {
+onLoaded(() => {
   createTweet();
 });
 
