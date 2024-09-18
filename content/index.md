@@ -1,3 +1,7 @@
+---
+layout: wide
+---
+
 # This is your brand new directory landing page! 👋
 
 You can customize this page in markdown. See the [documentation]() to see how to customize your **MintedDirectory** landing page.
@@ -15,3 +19,5 @@ Get Inspired by directories built with **MintedDirectory**:
 :dots
 
 Built with ❤️ by [@mark_bruderer](https://x.com/mark_bruderer)
+
+:directoryGrid

@@ -1,3 +1,7 @@
+---
+layout: wide
+---
+
 ::SimpleCenter
 # Welcome to the directory Blog 🤓
 
