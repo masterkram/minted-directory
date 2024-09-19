@@ -8,7 +8,7 @@ const { layout } = useContent();
 
 <template>
 
-  <Body :class="background">
+  <Body>
     <AppLayout>
       <NuxtLayout :name="layout as string || 'default'">
         <NuxtPage class="page-enter-active" />

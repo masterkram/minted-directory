@@ -4,6 +4,10 @@ export default defineAppConfig({
     logo: "/logo.png",
   },
   directory: {
+    detailPage: {
+      card: false,
+      showLinks: false,
+    },
     search: {
       placeholder: "Search among {0} tools",
       showCount: true,

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useContent, useRequestEvent, useSeoMeta } from '#imports'
 
-const { page, layout } = useContent()
+const { page } = useContent()
 
 // Page not found, set correct status code on SSR
 if (!(page as any).value && process.server) {
@@ -25,12 +25,21 @@ definePageMeta({ middleware: ['search-from-url'] })
 </script>
 
 <template>
-  <div class="document-driven-page">
-    <ContentRenderer v-if="page" :key="(page as any)._id" :value="page">
-      <template #empty="{ value }">
-        <DocumentEmpty :value="value" />
+  <main>
+    <ContentDoc>
+      <template v-slot="{ doc }">
+        <article>
+          <div class="flex justify-between">
+            <h1>{{ doc.title }}</h1>
+            <a href="" class="not-prose text-secondary-500 underline">photoai.com</a>
+          </div>
+
+          <ContentRenderer :value="doc" />
+        </article>
       </template>
-    </ContentRenderer>
-    <DocumentNotFound v-else />
-  </div>
+      <template #not-found>
+        <DocumentNotFound />
+      </template>
+    </ContentDoc>
+  </main>
 </template>
