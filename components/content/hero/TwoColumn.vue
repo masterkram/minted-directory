@@ -12,7 +12,8 @@ const props = defineProps(['imgSrc']);
         <ContentSlot :use="$slots.description" />
       </div>
       <div>
-        <img class="w-full rounded-md shadow-xl ring-1 ring-gray-300 dark:ring-gray-700" :src="imgSrc" />
+        <NuxtImg sizes="800px lg:1000px" class="w-full rounded-md shadow-xl ring-1 ring-gray-300 dark:ring-gray-700"
+          :src="imgSrc" />
       </div>
     </div>
   </div>

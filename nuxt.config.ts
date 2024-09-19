@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
     "@nuxtjs/seo",
     "@nuxt/scripts",
+    "@nuxt/image",
   ],
   // https://google-fonts.nuxtjs.org/
   googleFonts: {
