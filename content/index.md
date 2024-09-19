@@ -19,3 +19,5 @@ Get Inspired by directories built with **MintedDirectory**:
 :dots
 
 Built with ❤️ by [@mark_bruderer](https://x.com/mark_bruderer)
+
+:directoryGrid
