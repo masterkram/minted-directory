@@ -2,6 +2,6 @@
 cover: /logo.png
 ---
 
-# Photo AI
+# First Listing
 
-This is photo ai. :)
+This is an example listing to get started.

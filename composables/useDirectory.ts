@@ -1,5 +1,5 @@
 export function useDirectory() {
-  const intersection = useAppConfig().directory.search.tags.intersection;
+  const intersection = useAppConfig()?.directory?.search?.tags?.intersection;
 
   const search: Ref<string> = useState("search");
   const tags: Ref<string[]> = useState("tags");

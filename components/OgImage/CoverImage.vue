@@ -12,8 +12,7 @@ const props = defineProps({
   <div class="w-full h-full flex flex-col items-center justify-center text-white bg-gray-900"
     :style="{ padding: '30px 45px' }">
     <div class="pb-10 justify-center items-center flex flex-col">
-      <img v-if="cover" :src="cover" width="432" height="243" :style="{ borderRadius: '8px', overflow: 'hidden' }"
-        class="object-cover object-center" />
+      <img v-if="cover" :src="cover" width="432" height="243" :style="{ borderRadius: '8px', overflow: 'hidden' }" />
       <h1 :style="{
       fontSize: '65px',
       lineHeight: '85px',

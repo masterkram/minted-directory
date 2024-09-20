@@ -1,6 +1,10 @@
 <script setup lang="ts">
 const config = useAppConfig().header;
-const navigation = [{ name: "Home", href: "/" }, { name: "Blog", href: "/blog" }];
+const navData = [{ name: "Home", href: "/" }, { name: "Blog", href: "/blog" }, { name: "Advertise", href: "/advertise" }];
+
+const navigation = computed(() => {
+  return navData.filter((item) => config.navbar.links.includes(item.name));
+})
 </script>
 
 <template>

@@ -56,11 +56,12 @@ export default defineAppConfig({
     banner: {
       show: true,
       text: "Create your own directory website in minutes.",
-      link: "https://github.com/masterkram/nuxt-directory",
+      link: "https://minteddirectory.com",
       brandText: "MintedDirectory",
     },
     navbar: {
       colorModeSelector: true,
+      links: ["Home", "Blog", "Advertise"],
     },
     actionButton: {
       text: "Submit a starter",

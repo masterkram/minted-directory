@@ -1,3 +1,9 @@
+---
+ogImageStyle: Emoji
+ogImage:
+  emoji: 💶
+---
+
 ::ThemedCenter
 # Advertise your apps
 
