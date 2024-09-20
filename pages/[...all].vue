@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useContent, useRequestEvent, useSeoMeta } from '#imports'
 
 const { page, layout } = useContent()
 
@@ -14,13 +13,18 @@ if (!(page as any).value && process.server) {
 //   description: () => page.value?.description,
 // });
 
-defineOgImageComponent('NuxtSeo', {
-  title: 'Hello OG Image 👋',
-  description: 'Look what at me in dark mode',
-  theme: '#ff0000',
-  colorMode: 'dark',
-});
-
+if (page.value) {
+  defineOgImage({
+    component: 'Custom',
+    title: page.value.title,
+    description: page.value.description,
+    layout: page.value.layout,
+    cover: page.value.cover,
+    author: page.value.author,
+    date: page.value.date,
+    ...(page.value.ogImage || {}),
+  });
+}
 definePageMeta({ middleware: ['search-from-url'] })
 </script>
 
@@ -30,7 +34,6 @@ definePageMeta({ middleware: ['search-from-url'] })
       <template #empty="{ value }">
         <DocumentEmpty :value="value" />
       </template>
-      <DirectoryGrid />
     </ContentRenderer>
     <DocumentNotFound v-else />
   </div>

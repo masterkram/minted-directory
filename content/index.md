@@ -4,7 +4,7 @@ layout: wide
 
 # This is your brand new directory landing page! 👋
 
-You can customize this page in markdown. See the [documentation]() to see how to customize your **MintedDirectory** landing page.
+You can customize this page in markdown. See the [documentation](https://minteddirectory.com/docs) to see how to customize your **MintedDirectory** landing page.
 
 ## Quick Start:
 

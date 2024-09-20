@@ -6,7 +6,7 @@
       for.</p>
     <div class="mt-10">
       <NuxtLink to="/">
-        <Button>Back to home</Button>
+        <UiButton>Back to home</UiButton>
       </NuxtLink>
     </div>
   </div>

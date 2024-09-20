@@ -14,9 +14,9 @@ const config = useAppConfig().directory.grid;
         {{ config.emptyState.text }}
       </p>
       <NuxtLink class="bg-primary-500 rounded" to="/submit">
-        <Button>
+        <UiButton>
           Be the first to add it
-        </Button>
+        </UiButton>
       </NuxtLink>
     </div>
   </div>

@@ -26,6 +26,10 @@ export function useDirectory() {
         });
       }
 
+      query.where({
+        _extension: "md",
+      });
+
       return query.sort({ sponsored: 1 }).find();
     },
     { watch: [search, tags] }

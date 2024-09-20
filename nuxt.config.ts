@@ -47,7 +47,9 @@ export default defineNuxtConfig({
   },
 
   ogImage: {
-    runtimeChromium: false,
+    defaults: {
+      component: "OgImage",
+    },
   },
 
   compatibilityDate: "2024-09-20",
