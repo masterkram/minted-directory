@@ -9,10 +9,10 @@ if (!(page as any).value && process.server) {
   event.res.statusCode = 404
 }
 
-useSeoMeta({
-  title: () => page.value?.title,
-  description: () => page.value?.description,
-});
+// useSeoMeta({
+//   title: () => page.value?.title,
+//   description: () => page.value?.description,
+// });
 
 defineOgImageComponent('NuxtSeo', {
   title: 'Hello OG Image 👋',
@@ -30,6 +30,7 @@ definePageMeta({ middleware: ['search-from-url'] })
       <template #empty="{ value }">
         <DocumentEmpty :value="value" />
       </template>
+      <DirectoryGrid />
     </ContentRenderer>
     <DocumentNotFound v-else />
   </div>
