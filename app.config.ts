@@ -3,6 +3,11 @@ export default defineAppConfig({
     title: "Minted Directory",
     logo: "/logo.png",
   },
+  site: {
+    name: "Nuxt Starters",
+    description: "Find the best nuxt starter kits.",
+    url: "https://nuxtstarters.com",
+  },
   directory: {
     search: {
       placeholder: "Search among {0} tools",

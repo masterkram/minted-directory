@@ -33,13 +33,6 @@ export default defineNuxtConfig({
     highlight: false,
   },
 
-  site: {
-    name: "Nuxt Starters",
-    url: "https://nuxtstarters.com/",
-    description: "Nuxt starter kits.",
-    defaultLocale: "en",
-  },
-
   ogImage: {
     defaults: {
       component: "OgImage",
