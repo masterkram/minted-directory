@@ -20,7 +20,7 @@ export default defineAppConfig({
         text: "Seems that this entry is missing from the archives.",
         // options: button, simple, link
         type: "button",
-        icon: "ph:exclamation-mark",
+        icon: "tabler:exclamation-mark",
       },
       card: {
         image: true,
@@ -72,31 +72,31 @@ export default defineAppConfig({
     description: "Best directory for my niche.",
     socials: {
       github: {
-        link: "test",
-        icon: "ph:github-logo",
+        link: "",
+        icon: "tabler:brand-github",
       },
       facebook: {
-        link: "test",
-        icon: "ph:facebook-logo",
+        link: "",
+        icon: "tabler:brand-facebook",
       },
       instagram: {
-        link: "test",
-        icon: "ph:instagram-logo",
+        link: "",
+        icon: "tabler:brand-instagram",
       },
       x: {
-        link: "test",
-        icon: "ph:twitter-logo",
+        link: "https://x.com/mark_bruderer",
+        icon: "tabler:brand-twitter",
       },
       youtube: {
-        link: "test",
-        icon: "ph:youtube-logo",
+        link: "https://www.youtube.com/@mark_hacks",
+        icon: "tabler:brand-youtube",
       },
     },
   },
   ui: {
     icons: {
-      dark: "ph:moon-bold",
-      light: "ph:sun-bold",
+      dark: "tabler:moon",
+      light: "tabler:sun",
     },
   },
 });

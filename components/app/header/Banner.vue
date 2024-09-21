@@ -34,7 +34,7 @@ function removeBanner() {
     <div class="flex flex-1 justify-end">
       <button @click="removeBanner" type="button" class="-m-3 p-3 focus-visible:outline-offset-[-4px]">
         <span class="sr-only">Dismiss</span>
-        <Icon name="ph:x" class="h-5 w-5 text-white" aria-hidden="true" />
+        <Icon name="tabler:x" class="h-5 w-5 text-white" aria-hidden="true" />
       </button>
     </div>
   </div>

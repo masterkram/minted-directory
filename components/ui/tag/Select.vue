@@ -9,7 +9,7 @@ const { selectedTags, availableTags, addTagWithEvent, removeTag } = useTags();
       :class="`border-blue-500`">
       <span @click="() => removeTag(myTag)"
         class="absolute text-gray-500 opacity-0 transition-all group-hover:opacity-100 hover:bg-gray-100 flex items-center justify-center -top-4 left-0 bg-white rounded-full h-6 w-6 border dark:bg-gray-700 dark:border-gray-600 dark:hover:bg-gray-800">
-        <Icon name="ph:x-bold" />
+        <Icon name="tabler:x" />
       </span>
       {{ myTag }}
     </div>
