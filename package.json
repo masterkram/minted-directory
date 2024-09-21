@@ -22,9 +22,11 @@
     "@tailwindcss/forms": "^0.5.9",
     "@tailwindcss/typography": "^0.5.15",
     "nuxt": "^3.13.2",
-    "nuxt-icon": "1.0.0-beta.7",
     "posthog-js": "^1.163.0",
     "vue": "^3.5.6",
     "vue-router": "^4.4.5"
+  },
+  "devDependencies": {
+    "@nuxt/icon": "^1.5.1"
   }
 }

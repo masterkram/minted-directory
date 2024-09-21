@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "@nuxt/content",
     "@nuxtjs/google-fonts",
-    "nuxt-icon",
+    "@nuxt/icon",
     "@nuxthq/studio",
     "@nuxtjs/color-mode",
     "@nuxtjs/seo",
