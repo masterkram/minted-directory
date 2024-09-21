@@ -30,13 +30,7 @@ export default defineNuxtConfig({
     documentDriven: {
       injectPage: false,
     },
-    highlight: {
-      theme: {
-        dark: "github-dark",
-        default: "github-light",
-      },
-      langs: ["js", "ts", "html", "py", "sh"],
-    },
+    highlight: false,
   },
 
   site: {
