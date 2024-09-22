@@ -21,14 +21,11 @@ function removeBanner() {
   <div v-show="showBanner && bannerConfig?.show"
     class="flex items-center gap-x-6 bg-primary-600 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
     <p class="text-sm leading-6 text-white">
-      <a :href="href" target="_blank">
+      <a :href="href" target="_blank" class="inline-flex items-center gap-1">
         <strong v-if="bannerConfig?.brandText" class="font-semibold">{{ bannerConfig.brandText }}</strong>
-        <svg v-if="bannerConfig?.brandText" viewBox="0 0 2 2" class="mx-2 inline h-0.5 w-0.5 fill-current"
-          aria-hidden="true">
-          <circle cx="1" cy="1" r="1" />
-        </svg>
+        <AppHeaderDot v-if="bannerConfig?.brandText" />
         {{ bannerConfig?.text }}
-        &nbsp;<span aria-hidden="true">&rarr;</span>
+        <Icon class="w-5 h-5" name="tabler:arrow-right" />
       </a>
     </p>
     <div class="flex flex-1 justify-end">
