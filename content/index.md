@@ -13,5 +13,6 @@ Get Inspired by directories that have been built with **MintedDirectory**:
 ---
 
 Here is your starting listings grid 👇
+:search
 
 :directoryGrid
