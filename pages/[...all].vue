@@ -9,8 +9,7 @@ callWithNuxt(app, useSeoMeta, [{ title: page.value.title, description: page.valu
 if (page.value) {
   defineOgImage({
     component: page.value.ogImageStyle || 'Custom',
-    cover: page.value.cover,
-    link: page.value.link,
+    cover: page.value.cover ?? page.value.card_image,
     ...(page.value.ogImage || {}),
   });
 }
