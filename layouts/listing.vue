@@ -9,8 +9,8 @@ const { page } = useContent();
       <DocumentProse>
         <slot />
       </DocumentProse>
-      <DirectoryFeaturedRecommendation v-if="config.directory.featured.showOnAllPages && page && !page.sponsored"
-        :to="sponsored?._path" />
+      <DirectoryFeaturedRecommendation v-if="config.directory.featured.showOnAllPages && page && !page.featured"
+        :to="featured?._path" />
     </div>
   </div>
 </template>

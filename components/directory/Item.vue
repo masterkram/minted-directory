@@ -5,7 +5,7 @@ const props = defineProps(['item']);
 <template>
   <NuxtLink :to="item._path"
     class="border border-dashed border-gray-200 dark:border-gray-500 hover:border-primary-400 hover:border-solid dark:hover:border-primary-300 rounded p-6 relative group transition-all">
-    <DirectoryFeaturedTag v-if="item.sponsored" />
+    <DirectoryFeaturedTag v-if="item.featured" />
     <h3 class="m-0 text-lg font-semibold dark:text-gray-50">
       {{ item.title }}
     </h3>

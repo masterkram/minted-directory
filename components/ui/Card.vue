@@ -7,7 +7,7 @@ const props = defineProps(['item']);
   <NuxtLink :to="item._path"
     class="border col-span-1 border-gray-200 dark:border-gray-500 hover:border-primary-400 hover:border-solid dark:hover:border-primary-300 rounded relative group transition-all"
     :class="cardConfig.border === 'shadow' ? 'shadow-sm' : cardConfig.border === 'dashed' ? 'border-dashed' : ''">
-    <DirectoryFeaturedTag class="ml-6" v-if="item.sponsored" />
+    <DirectoryFeaturedTag class="ml-6" v-if="item.featured" />
     <NuxtImg v-if="item.card_image" sizes="400px" class="w-full h-48 rounded-t object-cover"
       :src="item.card_image ?? '/logo.png'" />
     <div v-else
