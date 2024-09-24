@@ -1,8 +1,24 @@
 <script setup lang="ts">
 const config = useAppConfig();
-const navigation = [{ name: "Home", href: "/" }, { name: "Blog", href: "/blog" }];
+const socials = computed(() => config.footer.socials ? Object.values(config.footer.socials).filter(i => (i?.icon?.length ?? 0) > 0 && (i?.link?.length ?? 0) > 0) : []);
 
-const socials = computed(() => Object.values(config.footer?.socials).filter(i => i.icon.length > 0 && i.link.length > 0));
+console.log(config.directory.tags);
+const navigation = [
+  {
+    title: "Directory", links: [{ title: "Submit", link: "/submit" }, { title: "Advertise", link: "/advertise" }],
+  },
+  {
+    title: "Categories", links: config.directory.tags?.filter(e => e && e.name).map(e => ({ title: e.name, link: `/tags/${e.name}` })).slice(0, 4),
+  },
+  {
+    title: "Blog", links: [{ title: "Articles", link: "/blog" }],
+  },
+  {
+    title: "Legal", links: [{ title: "Privacy Policy", link: "/legal/terms-of-service" }, { title: "Terms of Service", link: "/legal/privacy-policy" }],
+  },
+];
+
+
 </script>
 
 <template>
@@ -12,7 +28,7 @@ const socials = computed(() => Object.values(config.footer?.socials).filter(i =>
       <div class="xl:grid xl:grid-cols-3 xl:gap-8">
         <div class="space-y-8">
           <img class="h-12" :src="config.general.logo" :alt="config.general.title" />
-          <p class="text-sm leading-6 text-gray-600">{{ config.footer.description }}</p>
+          <p class="text-sm leading-6 text-gray-600 dark:text-gray-300">{{ config.footer.description }}</p>
           <div class="flex space-x-6">
             <a v-for="item in socials" :key="item?.link" :href="item?.link" class="text-gray-400 hover:text-gray-500">
               <Icon :name="item?.icon" class="h-6 w-6" aria-hidden="true" />
@@ -20,38 +36,27 @@ const socials = computed(() => Object.values(config.footer?.socials).filter(i =>
           </div>
         </div>
         <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-          <div class="md:grid md:grid-cols-2 md:gap-8">
+          <div v-for="count in 2" class="md:grid md:grid-cols-2 md:gap-8">
             <div>
-              <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Solutions</h3>
+              <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">{{ navigation[count - 1].title }}
+              </h3>
               <ul role="list" class="mt-6 space-y-4">
-                <li v-for="item in navigation.solutions" :key="item.name">
-                  <a :href="item.href" class="text-sm leading-6 text-gray-600 hover:text-gray-900">{{ item.name }}</a>
+                <li v-for="item in navigation[count - 1].links" :key="item.title">
+                  <NuxtLink :to="item.link"
+                    class="text-sm leading-6 text-gray-600 dark:text-gray-300 hover:dark:text-gray-400 hover:text-gray-900">
+                    {{ item.title }}
+                  </NuxtLink>
                 </li>
               </ul>
             </div>
             <div class="mt-10 md:mt-0">
-              <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Support</h3>
+              <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">{{ navigation[count + 1].title }}
+              </h3>
               <ul role="list" class="mt-6 space-y-4">
-                <li v-for="item in navigation.support" :key="item.name">
-                  <a :href="item.href" class="text-sm leading-6 text-gray-600 hover:text-gray-900">{{ item.name }}</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="md:grid md:grid-cols-2 md:gap-8">
-            <div>
-              <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Company</h3>
-              <ul role="list" class="mt-6 space-y-4">
-                <li v-for="item in navigation.company" :key="item.name">
-                  <a :href="item.href" class="text-sm leading-6 text-gray-600 hover:text-gray-900">{{ item.name }}</a>
-                </li>
-              </ul>
-            </div>
-            <div class="mt-10 md:mt-0">
-              <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Legal</h3>
-              <ul role="list" class="mt-6 space-y-4">
-                <li v-for="item in navigation.legal" :key="item.name">
-                  <a :href="item.href" class="text-sm leading-6 text-gray-600 hover:text-gray-900">{{ item.name }}</a>
+                <li v-for="item in navigation[count + 1].links" :key="item.title">
+                  <a :href="item.link"
+                    class="text-sm leading-6 text-gray-600 dark:text-gray-300 hover:dark:text-gray-400 hover:text-gray-900">{{
+            item.title }}</a>
                 </li>
               </ul>
             </div>
@@ -59,7 +64,9 @@ const socials = computed(() => Object.values(config.footer?.socials).filter(i =>
         </div>
       </div>
       <div class="mt-16 border-t border-gray-900/10 dark:border-gray-600 pt-8 sm:mt-20 lg:mt-24">
-        <p class="text-xs leading-5 text-gray-500">&copy; 2020 Your Company, Inc. All rights reserved.</p>
+        <p class="text-xs leading-5 text-gray-500">&copy; {{ new Date().getFullYear() }} {{ config.general.title }} All
+          rights
+          reserved.</p>
       </div>
     </div>
   </footer>
