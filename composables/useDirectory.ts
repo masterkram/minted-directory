@@ -30,7 +30,7 @@ export function useDirectory() {
         _extension: "md",
       });
 
-      return query.sort({ sponsored: 1 }).find();
+      return query.sort({ featured: 1 }).find();
     },
     { watch: [search, tags] }
   );

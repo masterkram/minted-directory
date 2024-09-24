@@ -16,9 +16,7 @@ const { selectedTags, availableTags, addTagWithEvent, removeTag } = useTags();
     <select :modelValue="null" @change="addTagWithEvent"
       class="border border-dashed border-gray-300 rounded-lg font-medium text-gray-500 dark:border-gray-500 dark:bg-gray-700 dark:text-gray-400 focus:ring-primary-500 focus:ring-2 focus:border-none ring-offset-4">
       <option value="" disabled selected>
-        <span>
-          Select a tag
-        </span>
+        Select a tag
       </option>
       <option v-for="tag in availableTags" :key="tag.name" :value="tag.name">{{ tag.name }}</option>
     </select>
