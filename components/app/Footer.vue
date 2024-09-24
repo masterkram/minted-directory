@@ -2,7 +2,6 @@
 const config = useAppConfig();
 const socials = computed(() => config.footer.socials ? Object.values(config.footer.socials).filter(i => (i?.icon?.length ?? 0) > 0 && (i?.link?.length ?? 0) > 0) : []);
 
-console.log(config.directory.tags);
 const navigation = [
   {
     title: "Directory", links: [{ title: "Submit", link: "/submit" }, { title: "Advertise", link: "/advertise" }],
@@ -17,8 +16,6 @@ const navigation = [
     title: "Legal", links: [{ title: "Privacy Policy", link: "/legal/terms-of-service" }, { title: "Terms of Service", link: "/legal/privacy-policy" }],
   },
 ];
-
-
 </script>
 
 <template>
