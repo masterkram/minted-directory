@@ -6,9 +6,9 @@ Nuxt 3 Based Directory Website Boilerplate.
 
 ---
 
-Learn more at [minteddirectory.com](https://www.minteddirectory.com)
+Learn more at [minteddirectory.com](https://minteddirectory.com)
 
-Read the [docs](https://docs.minteddirectory.com)
+Read the [docs](https://minteddirectory.com/docs)
 
 ### Features:
 + 🖌️ Add Listings with markdown.
@@ -48,4 +48,4 @@ Locally preview production build:
 pnpm run preview
 ```
 
-Check out the [deployment documentation](https://docs.minteddirectory.com/deployment) for more information.
+Check out the [deployment documentation](https://minteddirectory.com/docs/deployment) for more information.
