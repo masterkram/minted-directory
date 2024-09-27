@@ -3,7 +3,6 @@ import { useState, defineNuxtRouteMiddleware } from "#imports";
 export default defineNuxtRouteMiddleware((to, from) => {
   const search = useState("search");
   const tags = useState("tags");
-  console.log(tags.value);
   if (search.value || tags.value) {
     return;
   }

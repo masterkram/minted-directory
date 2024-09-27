@@ -1,10 +1,20 @@
 <script setup lang="ts">
 import { callWithNuxt } from '#app';
+
+const config = useAppConfig();
 const app = useNuxtApp();
 
 const { page, layout } = useContent();
 
-callWithNuxt(app, useSeoMeta, [{ title: page.value.title, description: page.value.description }]);
+function getSEOTitle(): string {
+  return page?.value?.title ?? config?.site?.name ?? "Missing Title";
+}
+
+function getSEODescription(): string {
+  return page?.value?.description ?? config.site.description ?? "Missing Description"
+}
+
+callWithNuxt(app, useSeoMeta, [{ title: getSEOTitle(), description: getSEODescription() }]);
 
 if (page.value) {
   defineOgImage({

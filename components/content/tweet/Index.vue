@@ -26,7 +26,6 @@ function createTweet() {
 
 function switchTweetTheme(currentTheme, targetTheme) {
   var tweets = document.querySelectorAll('[data-tweet-id]');
-  console.log(tweets);
 
   tweets.forEach(function (tweet) {
     var src = tweet.getAttribute("src");
