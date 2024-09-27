@@ -24,7 +24,6 @@ interface DirectoryQuery {
 }
 
 function updateSearchQueryParameter() {
-  console.log(selectedTags);
   const queryObject: DirectoryQuery = {};
 
   if (search.value && search.value.length > 0) {
