@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { LocationQueryRaw } from 'vue-router';
-import formatString from '../../util/formatString';
+import formatString from '~~/util/formatString';
 const router = useRouter();
 
 const search: Ref<string> = useState("search");

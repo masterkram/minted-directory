@@ -113,12 +113,12 @@ export default defineNuxtSchema({
                   description: "Images on cards",
                   default: false,
                 }),
-                border: field({
+                type: field({
                   type: "string",
                   title: "Type",
                   description: "Type of empty state.",
                   default: "dashed",
-                  required: ["dashed", "shadow", "outline"],
+                  required: ["dashed", "shadow", "outline", "bullet"],
                 }),
               },
             }),
@@ -156,6 +156,13 @@ export default defineNuxtSchema({
                   title: "Hideable",
                   description: "Allow hiding the submit button.",
                   default: true,
+                }),
+                icon: field({
+                  type: "icon",
+                  title: "Icon",
+                  description:
+                    "Icon shown in the submit suggestion in the grid.",
+                  default: "tabler:send",
                 }),
               },
             }),
