@@ -1,10 +1,15 @@
-# Minted Directory
+<div align="center">
+  <h1>Minted Directory Template</h1>
+  <p>Markdown driven directory template. Built with Nuxt, Nuxt Content and Tailwindcss. Optimized for SEO. Beautiful Customizable Style</p>
+</div>
 
-Nuxt 3 Based Directory Website Boilerplate.
+<br/>
 
-<img src="./directory_screenshot.png" />
+<div align="center">
+  <img src="./assets/directory-example.png" width="85%" alt="Minted Directory Screenshot" />
+</div>
 
----
+<br/>
 
 Learn more at [minteddirectory.com](https://minteddirectory.com)
 
