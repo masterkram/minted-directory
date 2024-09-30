@@ -36,7 +36,7 @@ pnpm dev
 
 Then you can start customizing and building your directory.
 + Customize the `app.config.ts`
-+ Change the `primary` color in `tailwind.config.ts`
++ Change the `primary`, `secondary` color and `fontFamily` in `tailwind.config.ts`
 + Add content to `/content/dir` and `/content/blog`
 
 ### Deployment
