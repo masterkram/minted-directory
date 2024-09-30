@@ -14,13 +14,6 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
   ],
 
-  // https://google-fonts.nuxtjs.org/
-  googleFonts: {
-    families: {
-      "DM Sans": "200..900",
-    },
-  },
-
   colorMode: {
     classSuffix: "",
   },
