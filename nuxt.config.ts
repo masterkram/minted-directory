@@ -5,13 +5,13 @@ export default defineNuxtConfig({
   modules: [
     "@nuxtjs/tailwindcss",
     "@nuxt/content",
-    "@nuxtjs/google-fonts",
     "@nuxt/icon",
     "@nuxthq/studio",
     "@nuxtjs/color-mode",
     "@nuxtjs/seo",
     "@nuxt/scripts",
     "@nuxt/image",
+    "@nuxt/fonts",
   ],
 
   // https://google-fonts.nuxtjs.org/
