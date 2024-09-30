@@ -1,10 +1,11 @@
 export default defineAppConfig({
   general: {
-    title: "Minted Directory",
-    logo: "/logo.png",
+    title: "My Favorite Cars",
+    logo: "",
+    iconLogo: "tabler:car",
   },
   site: {
-    name: "Nuxt Starters",
+    name: "My Favorite Cars",
     description: "Find the best nuxt starter kits.",
     url: "https://nuxtstarters.com",
   },
@@ -33,7 +34,7 @@ export default defineAppConfig({
         border: "shadow",
       },
       submit: {
-        show: true,
+        show: false,
         first: false,
         title: "Submit a template",
         description:

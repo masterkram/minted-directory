@@ -35,5 +35,4 @@ defineProps(['item']);
       <span class="text-gray-600 dark:text-gray-300">{{ item.description }}</span>
     </div>
   </NuxtLink>
-
 </template>
