@@ -15,6 +15,9 @@ Get inspired by other directories:
 ---
 
 Here is your starting listings grid 👇
-:search
 
-:directoryGrid
+::search
+::
+
+::directory-grid
+::
