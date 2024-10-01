@@ -4,7 +4,7 @@ import forms from "@tailwindcss/forms";
 
 export default {
   darkMode: "class",
-  plugins: [typography(), forms(), require("@tailwindcss/line-clamp")],
+  plugins: [typography(), forms()],
   theme: {
     extend: {
       fontFamily: {
