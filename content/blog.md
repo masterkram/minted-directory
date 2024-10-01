@@ -3,7 +3,7 @@ layout: wide
 description: Read the best articles related to the directory.
 ---
 
-::ThemedCenter{icon="tabler:zeppelin"}
+::themed-center{icon="tabler:zeppelin"}
 # Welcome to the Blog
 
 #description
