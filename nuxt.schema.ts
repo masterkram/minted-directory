@@ -24,6 +24,27 @@ export default defineNuxtSchema({
       title: "Directory",
       description: "Directory configuration.",
       fields: {
+        featured: group({
+          fields: {
+            showOnAllPages: field({
+              type: "boolean",
+              title: "Show Featured On All Pages",
+              description: "Show featured items on all pages.",
+              default: true,
+            }),
+            featuredText: field({
+              type: "string",
+              title: "Featured Text",
+              description: "Text to display for featured items.",
+              default: "Featured ✨",
+            }),
+            icon: field({
+              type: "icon",
+              title: "Featured Icon",
+              description: "Icon for the banner of featured listings",
+            }),
+          },
+        }),
         search: group({
           title: "Search",
           description: "Search settings for the directory.",
@@ -34,12 +55,6 @@ export default defineNuxtSchema({
               description:
                 "Placeholder text for the search input. Use {0} to mark where to fill in the number of listings.",
               default: "Search among {0} tools",
-            }),
-            showCount: field({
-              type: "boolean",
-              title: "Show Count",
-              description: "Show the number of search results.",
-              default: true,
             }),
             icon: field({
               type: "icon",
@@ -167,18 +182,6 @@ export default defineNuxtSchema({
               },
             }),
           },
-        }),
-        showFeaturedOnAllPages: field({
-          type: "boolean",
-          title: "Show Featured On All Pages",
-          description: "Show featured items on all pages.",
-          default: true,
-        }),
-        featuredText: field({
-          type: "string",
-          title: "Featured Text",
-          description: "Text to display for featured items.",
-          default: "Featured ✨",
         }),
         tags: field({
           type: "array",
