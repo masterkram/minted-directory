@@ -26,8 +26,7 @@ const navigation = [
     <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
       <div class="xl:grid xl:grid-cols-3 xl:gap-8">
         <div class="space-y-8">
-          <img class="h-12" :src="config.general.logo" :alt="config.general.title" />
-          <p class="text-sm leading-6 text-gray-600 dark:text-gray-300">{{ config.footer.description }}</p>
+          <AppLogo />
           <div class="flex space-x-6">
             <a v-for="item in socials" :key="item?.link" :href="item?.link" class="text-gray-400 hover:text-gray-500">
               <Icon :name="item.icon!" class="h-6 w-6" aria-hidden="true" />
