@@ -10,8 +10,6 @@ const featured = null;
       <DocumentProse>
         <slot />
       </DocumentProse>
-      <DirectoryFeaturedRecommendation
-        v-if="config.directory?.featured?.showOnAllPages && page && !page.featured && featured" :to="featured?._path" />
     </div>
   </div>
 </template>
