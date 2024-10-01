@@ -1,13 +1,15 @@
 <script setup lang="ts">
+import type Tag from '~~/types/Tag';
+
 const config = useAppConfig();
-const socials = computed(() => config.footer.socials ? Object.values(config.footer.socials).filter(i => (i?.icon?.length ?? 0) > 0 && (i?.link?.length ?? 0) > 0) : []);
+const socials = computed(() => config.footer.socials ? Object.values(config.footer.socials).filter(i => i?.icon && i?.link) : []);
 
 const navigation = [
   {
     title: "Directory", links: [{ title: "Submit", link: "/submit" }, { title: "Advertise", link: "/advertise" }],
   },
   {
-    title: "Categories", links: config.directory.tags?.filter(e => e && e.name).map(e => ({ title: e.name, link: `/tags/${e.name}` })).slice(0, 4),
+    title: "Categories", links: config.directory.tags?.filter(e => e && (e as Tag).name).map(e => ({ title: (e as Tag).name, link: `/tags/${(e as Tag).name}` })).slice(0, 4),
   },
   {
     title: "Blog", links: [{ title: "Articles", link: "/blog" }],
@@ -28,7 +30,7 @@ const navigation = [
           <p class="text-sm leading-6 text-gray-600 dark:text-gray-300">{{ config.footer.description }}</p>
           <div class="flex space-x-6">
             <a v-for="item in socials" :key="item?.link" :href="item?.link" class="text-gray-400 hover:text-gray-500">
-              <Icon :name="item?.icon" class="h-6 w-6" aria-hidden="true" />
+              <Icon :name="item.icon!" class="h-6 w-6" aria-hidden="true" />
             </a>
           </div>
         </div>
@@ -53,7 +55,7 @@ const navigation = [
                 <li v-for="item in navigation[count + 1].links" :key="item.title">
                   <a :href="item.link"
                     class="text-sm leading-6 text-gray-600 dark:text-gray-300 hover:dark:text-gray-400 hover:text-gray-900">{{
-            item.title }}</a>
+                      item.title }}</a>
                 </li>
               </ul>
             </div>

@@ -1,4 +1,5 @@
-import { ref, computed } from "vue";
+import { computed } from "vue";
+import type Tag from "~~/types/Tag";
 import { useState } from "#app";
 import { useAppConfig } from "#imports";
 
@@ -7,7 +8,12 @@ export function useTags() {
   const tags = useAppConfig().directory.tags;
 
   const availableTags = computed(() => {
-    return tags.filter((e) => !selectedTags.value.includes(e.name));
+    if (!tags) {
+      return [];
+    }
+    return tags.filter(
+      (e) => e && !selectedTags.value.includes((e as Tag).name)
+    );
   });
 
   function removeTag(myTag: string) {

@@ -5,7 +5,7 @@ ogImage:
   emoji: 💶
 ---
 
-::themed-center{icon="tabler:ad-2"}
+::icon-center-hero{icon="tabler:ad-2"}
 # Advertise your new app!
 
 #description
