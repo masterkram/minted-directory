@@ -20,6 +20,7 @@
     "@nuxtjs/seo": "2.0.0-rc.21",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@tailwindcss/forms": "^0.5.9",
+    "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/typography": "^0.5.15",
     "nuxt": "^3.13.2",
     "posthog-js": "^1.163.0",
