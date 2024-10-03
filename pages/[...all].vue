@@ -7,11 +7,11 @@ const app = useNuxtApp();
 const { page, layout } = useContent();
 
 function getSEOTitle(): string {
-  return page?.value?.title ?? config?.site?.name ?? "Missing Title";
+  return page?.value?.title || config?.site?.name || "Missing Title";
 }
 
 function getSEODescription(): string {
-  return page?.value?.description ?? config.site.description ?? "Missing Description"
+  return page?.value?.description || config.site.description || "Missing Description"
 }
 
 callWithNuxt(app, useSeoMeta, [{ title: getSEOTitle(), description: getSEODescription() }]);
@@ -19,7 +19,7 @@ callWithNuxt(app, useSeoMeta, [{ title: getSEOTitle(), description: getSEODescri
 if (page.value) {
   defineOgImage({
     component: page.value.ogImageStyle || 'Custom',
-    cover: page.value.cover ?? page.value.card_image,
+    cover: page.value.cover || page.value.card_image,
     ...(page.value.ogImage || {}),
   });
 }
