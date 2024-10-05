@@ -28,7 +28,9 @@ const navigation = [
         <div class="space-y-8">
           <AppLogo />
           <div class="flex space-x-6">
-            <a v-for="item in socials" :key="item?.link" :href="item?.link" class="text-gray-400 hover:text-gray-500">
+            <a v-for="(item, key) in socials" :key="item?.link" :href="item?.link"
+              class="text-gray-400 hover:text-gray-500">
+              <span class="sr-only">{{ key }}</span>
               <Icon :name="item.icon!" class="h-6 w-6" aria-hidden="true" />
             </a>
           </div>
