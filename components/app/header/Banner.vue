@@ -29,8 +29,8 @@ function removeBanner() {
         <Icon class="hidden sm:block w-5 h-5" name="tabler:arrow-right" />
       </a>
     </p>
-    <div class="hidden sm:flex flex-1 justify-end">
-      <button @click="removeBanner" type="button" class="-m-3 p-3 focus-visible:outline-offset-[-4px]">
+    <div class="hidden sm:flex flex-1 justify-end items-center">
+      <button @click="removeBanner" type="button" class="w-5 h-5">
         <span class="sr-only">Dismiss</span>
         <Icon name="tabler:x" class="h-5 w-5 text-white" aria-hidden="true" />
       </button>
