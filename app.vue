@@ -1,9 +1,4 @@
 <script setup lang="ts">
-
-const colorMode = useColorMode();
-
-const background = computed(() => colorMode.value === "dark" ? "bg-gray-800" : "bg-white");
-
 const { layout } = useContent();
 
 const layoutName = computed(() => layout.value || 'default');
@@ -11,16 +6,18 @@ const layoutName = computed(() => layout.value || 'default');
 
 <template>
 
-  <Body :class="background">
-    <AppLayout>
-      <NuxtLayout :name="layoutName">
-        <NuxtPage class="page-enter-active" />
-      </NuxtLayout>
-    </AppLayout>
-  </Body>
+  <AppLayout>
+    <NuxtLayout :name="layoutName">
+      <NuxtPage class="page-enter-active" />
+    </NuxtLayout>
+  </AppLayout>
 </template>
 
 <style>
+.dark body {
+  @apply bg-gray-800;
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
