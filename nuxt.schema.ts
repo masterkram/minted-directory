@@ -210,6 +210,10 @@ export default defineNuxtSchema({
               type: "string",
               default: "All {0} products",
             }),
+            description: field({
+              type: "string",
+              default: "All {0} products",
+            }),
           },
         }),
       },

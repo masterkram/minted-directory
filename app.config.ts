@@ -58,6 +58,8 @@ export default defineAppConfig({
     ],
     tagPages: {
       title: "Available {0} products:",
+      description:
+        "View all available tools and templates in the {0} category...",
     },
   },
   header: {
