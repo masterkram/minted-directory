@@ -11,7 +11,7 @@ const showFeaturedListings: ComputedRef<boolean> = computed(() => {
   return showOnAllPages && !!page && !isFeatured;
 });
 
-
+const { data: featured } = await useFeatured();
 </script>
 
 <template>
@@ -21,7 +21,8 @@ const showFeaturedListings: ComputedRef<boolean> = computed(() => {
         <slot />
       </DocumentProse>
       <div class="absolute top-0 right-20">
-        <DirectoryFeaturedRecommendation v-if="showFeaturedListings" :to="featured?._path" />
+        <DirectoryFeaturedRecommendation v-if="config?.directory?.featured?.showOnAllPages && page && !page.featured"
+          :to="featured?._path" />
       </div>
     </div>
   </div>

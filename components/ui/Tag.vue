@@ -1,9 +1,10 @@
 <script setup lang="ts">
-const config: Array<{ name: string, color: string | undefined }> = useAppConfig().directory.tags;
+import type Tag from '~/types/Tag';
+const config = useAppConfig().directory.tags as Tag[] | undefined;
 
 const props = defineProps(['tag']);
 
-const configTag = config.find(element => element.name === props.tag);
+const configTag = config?.find(element => element.name === props.tag);
 
 const tagClass = computed(() => {
   return configTag?.color ? `${configTag.color}-tag` : 'gray-tag';

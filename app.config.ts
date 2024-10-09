@@ -12,7 +12,6 @@ export default defineAppConfig({
   directory: {
     search: {
       placeholder: "Search among {0} tools",
-      showCount: true,
       icon: "tabler:bow",
       tags: {
         // options: none,select,show-all,

@@ -3,7 +3,7 @@ const config = useAppConfig().header;
 const navData = [{ name: "Home", href: "/" }, { name: "Blog", href: "/blog" }, { name: "Advertise", href: "/advertise" }];
 
 const navigation = computed(() => {
-  return navData.filter((item) => config.navbar.links.includes(item.name));
+  return navData.filter((item) => (config?.navbar?.links ?? []).includes(item.name));
 })
 </script>
 

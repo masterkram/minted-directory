@@ -1,6 +1,8 @@
 <script setup lang="ts">
-const tags = useAppConfig().directory.tags;
-const { selectedTags, availableTags, toggleTagByName, removeTag } = useTags();
+import type Tag from '~/types/Tag';
+
+const tags = useAppConfig().directory.tags as Tag[] | undefined;
+const { selectedTags, toggleTagByName } = useTags();
 </script>
 
 <template>

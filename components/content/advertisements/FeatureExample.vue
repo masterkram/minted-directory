@@ -1,7 +1,4 @@
 <script setup>
-const title = ref();
-const description = ref()
-
 const item = computed(() => ({
   title: "My Awesome Product",
   description: "This product is a great way to do things.",

@@ -10,7 +10,7 @@ const searchConfig = useAppConfig().directory.search;
 const searchPlaceholder = await getSearchPlaceholder();
 
 async function getSearchPlaceholder() {
-  if (searchConfig?.showCount) {
+  if (searchConfig?.placeholder && searchConfig.placeholder.includes("{0}")) {
     const { data: count } = await useAsyncData('content-count', () => queryContent('/dir').where({ _extension: "md" }).count());
     return formatString(searchConfig?.placeholder ?? "Search among {0} listings", count.value);
   }
