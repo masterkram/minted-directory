@@ -20,8 +20,6 @@ defineOgImage({
   title: title.value,
   description: description.value
 });
-
-definePageMeta({ middleware: ['search-from-url'] })
 </script>
 
 <template>
