@@ -1,5 +1,6 @@
 ---
 cover: /logo.png
+featured: true
 ---
 
 # First Listing

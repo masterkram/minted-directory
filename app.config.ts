@@ -12,7 +12,6 @@ export default defineAppConfig({
   directory: {
     search: {
       placeholder: "Search among {0} tools",
-      showCount: true,
       icon: "tabler:bow",
       tags: {
         // options: none,select,show-all,
@@ -31,7 +30,7 @@ export default defineAppConfig({
       card: {
         image: true,
         // options: dashed, shadow, outline, bullet
-        style: "shadow",
+        type: "shadow",
       },
       submit: {
         show: true,

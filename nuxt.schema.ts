@@ -32,7 +32,14 @@ export default defineNuxtSchema({
               description: "Show featured items on all pages.",
               default: true,
             }),
-            featuredText: field({
+            showOnSide: field({
+              type: "boolean",
+              title: "Featured listing location",
+              description:
+                "Show recommended listing on side of the screen or bottom of the.",
+              default: true,
+            }),
+            labelForCard: field({
               type: "string",
               title: "Featured Text",
               description: "Text to display for featured items.",
@@ -242,6 +249,12 @@ export default defineNuxtSchema({
               title: "Color Mode Selector",
               description: "Show the color mode selector in the navbar.",
               default: true,
+            }),
+            links: field({
+              type: "array",
+              title: "Link Array",
+              description: "Links to show on the navbar.",
+              default: [],
             }),
           },
         }),

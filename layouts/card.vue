@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const config = useAppConfig();
 const { page } = useContent();
+const { data: featured } = await useFeatured();
 </script>
 
 <template>
@@ -10,7 +11,7 @@ const { page } = useContent();
       <DocumentProse>
         <slot />
       </DocumentProse>
-      <DirectoryFeaturedRecommendation v-if="config.directory.featured.showOnAllPages && page && !page.featured"
+      <DirectoryFeaturedRecommendation v-if="config?.directory?.featured?.showOnAllPages && page && !page.featured"
         :to="featured?._path" />
     </div>
   </div>

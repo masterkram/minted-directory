@@ -5,9 +5,9 @@ import { useAppConfig } from "#imports";
 
 export function useTags() {
   const selectedTags = useState<string[]>("tags", () => []);
-  const tags = useAppConfig().directory.tags;
+  const tags = useAppConfig().directory.tags as Tag[] | undefined;
 
-  const availableTags = computed(() => {
+  const availableTags = computed((): Tag[] => {
     if (!tags) {
       return [];
     }
