@@ -1,10 +1,5 @@
 <script setup lang="ts">
 const config = useAppConfig().header;
-const navData = [{ name: "Home", href: "/" }, { name: "Blog", href: "/blog" }, { name: "Advertise", href: "/advertise" }];
-
-const navigation = computed(() => {
-  return navData.filter((item) => (config?.navbar?.links ?? []).includes(item.name));
-})
 </script>
 
 <template>
@@ -15,8 +10,8 @@ const navigation = computed(() => {
         <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
           <ul
             class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-700 md:dark:bg-gray-700 dark:border-gray-700">
-            <li v-for="nav in navigation">
-              <NuxtLink :href="nav.href"
+            <li v-for="nav in config.navbar?.links">
+              <NuxtLink :href="nav.to"
                 class="font-medium block py-2 px-3 text-white bg-primary-700 rounded md:bg-transparent md:text-gray-700 md:p-0 md:dark:text-gray-300"
                 aria-current="page">{{ nav.name }}</NuxtLink>
             </li>
