@@ -3,6 +3,7 @@ export default defineAppConfig({
     title: "Minted Directory",
     logo: "/logo.png",
     iconLogo: "",
+    favicon: "tabler:alert-octagon-filled",
   },
   site: {
     name: "Nuxt Starters",
