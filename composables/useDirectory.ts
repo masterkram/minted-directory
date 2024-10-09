@@ -1,4 +1,10 @@
-export function useDirectory() {
+import { useAsyncData, type AsyncData } from "nuxt/app";
+import type ListingContent from "~/types/Listing";
+
+export function useDirectory(): AsyncData<
+  ListingContent[] | null,
+  Error | null
+> {
   const intersection = useAppConfig()?.directory?.search?.tags?.intersection;
 
   const search: Ref<string> = useState("search");
@@ -30,7 +36,7 @@ export function useDirectory() {
         _extension: "md",
       });
 
-      return query.sort({ featured: 1 }).find();
+      return query.sort({ featured: 1 }).find() as Promise<ListingContent[]>;
     },
     { watch: [search, tags] }
   );

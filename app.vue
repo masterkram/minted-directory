@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const { layout } = useContent();
 
-const layoutName = computed(() => layout.value || 'default');
+const layoutName = computed(() => layout.value || 'wide');
 </script>
 
 <template>

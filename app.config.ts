@@ -56,6 +56,9 @@ export default defineAppConfig({
       { name: "markdown-based" },
       { name: "basics", color: "indigo" },
     ],
+    tagPages: {
+      title: "Available {0} products:",
+    },
   },
   header: {
     banner: {
@@ -73,6 +76,7 @@ export default defineAppConfig({
         {
           name: "Analytics",
           to: "https://us.posthog.com/shared/7dgSk4cvgNYnJwBu6R47kZXHBUBJWQ",
+          target: "_blank",
         },
       ],
     },

@@ -204,6 +204,14 @@ export default defineNuxtSchema({
             { name: "basics", color: "indigo" },
           ],
         }),
+        tagPages: group({
+          fields: {
+            title: field({
+              type: "string",
+              default: "All {0} products",
+            }),
+          },
+        }),
       },
     }),
     header: group({

@@ -1,6 +1,8 @@
 ---
 cover: /logo.png
 featured: true
+tags:
+  - SAAS
 ---
 
 # First Listing
