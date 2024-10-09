@@ -9,7 +9,9 @@ const props = defineProps(['imgSrc']);
         <h1 class="text-5xl dashedcue text-balance font-extrabold tracking-tight">
           <ContentSlot :use="$slots.default" unwrap="h1" />
         </h1>
-        <ContentSlot :use="$slots.description" />
+        <p class="leading-8">
+          <ContentSlot :use="$slots.description" />
+        </p>
       </div>
       <div>
         <NuxtImg sizes="800px lg:1000px" class="w-full rounded-md shadow-xl ring-1 ring-gray-300 dark:ring-gray-700"
