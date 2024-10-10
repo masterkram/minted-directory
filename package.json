@@ -27,6 +27,7 @@
     "vue-router": "^4.4.5"
   },
   "devDependencies": {
+    "@iconify-json/tabler": "^1.2.5",
     "@nuxt/icon": "^1.5.1"
   }
 }
