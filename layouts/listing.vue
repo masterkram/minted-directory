@@ -1,29 +1,21 @@
 <script setup lang="ts">
-import type ListingContent from '~/types/Listing';
-
 const config = useAppConfig();
 const { page } = useContent();
-
-const showFeaturedListings: ComputedRef<boolean> = computed(() => {
-  const showOnAllPages = config?.directory?.featured?.showOnAllPages ?? false;
-  const isFeatured = (page as unknown as ListingContent)?.featured ?? false;
-
-  return showOnAllPages && !!page && !isFeatured;
-});
 
 const { data: featured } = await useFeatured();
 </script>
 
 <template>
-  <div class="relative">
-    <div class="max-w-prose 2-xl:max-w-6xl px-5 py-10 mx-auto">
+  <div class="grid grid-cols-1 lg:grid-cols-10 lg:gap-8 py-10">
+    <div class="max-w-prose px-5 lg:col-start-3 lg:px-0 2xl:col-start-4 col-span-4">
       <DocumentProse>
         <slot />
       </DocumentProse>
-      <div class="absolute top-0 right-20">
-        <DirectoryFeaturedRecommendation v-if="config?.directory?.featured?.showOnAllPages && page && !page.featured"
-          :to="featured?._path" />
-      </div>
+    </div>
+
+    <div v-if="config.directory.featured?.showOnAllPages"
+      class="col-span-1 lg:col-span-4 2xl:col-span-3 order-last lg:mr-20 mx-5 lg:mx-0">
+      <DirectoryFeaturedRecommendation v-if="config?.directory?.featured?.showOnAllPages && page && !page.featured" />
     </div>
   </div>
 </template>

@@ -1,18 +1,24 @@
 <script setup lang="ts">
-const { data: featured } = await useAsyncData('featured', () => queryContent('/dir').where({ featured: { $exists: true } }).only(['title', 'description', '_path']).findOne());
+import type { AsyncData } from '#app';
+import type ListingContent from '~/types/Listing';
+
+const { data: featured } = await useAsyncData('featured', () => queryContent('/dir').where({ featured: { $exists: true } }).only(['title', 'description', '_path', 'card_image']).findOne()) as AsyncData<ListingContent, Error | null>;
 const config = useAppConfig();
 const featuredExists = computed(() => featured.value);
 </script>
 
 <template>
-  <NuxtLink v-if="featuredExists"
-    class="block border mt-8 bg-indigo-50 dark:bg-indigo-400/10 dark:border-indigo-400/30 border-indigo-200 rounded-lg p-4"
-    :class="config?.directory?.featured?.showOnSide ? '2xl:absolute 2xl:max-w-xs 2xl:top-4 2xl:right-4' : 'my-8'">
-    <div class="flex justify-between items-center font-medium text-indigo-700 dark:text-indigo-300">
-      <span class="underline">Sponsored</span>
-      <Icon :name="config?.directory?.featured?.icon ?? 'tabler:star'" />
+  <div v-if="featuredExists"
+    class="flex flex-row flex-wrap border bg-gray-50 dark:bg-gray-700 dark:border-gray-600 border-gray-200 rounded-lg p-6 gap-3">
+    <div class="flex flex-col justify-between">
+      <div class="space-y-2 max-w-40">
+        <p class="font-bold text-2xl dark:text-white tracking-tight">{{ featured?.title }}</p>
+        <p class="text-gray-700 italic dark:text-gray-300">{{ featured?.description }}</p>
+      </div>
+      <NuxtLink class="mt-3" :to="featured._path">
+        <UiButton icon="tabler:click">Learn More</UiButton>
+      </NuxtLink>
     </div>
-    <p class="font-bold dark:text-white">{{ featured?.title }}</p>
-    <p class="text-gray-700 dark:text-gray-300">{{ featured?.description }}</p>
-  </NuxtLink>
+    <NuxtImg v-if="featured?.card_image" class="rounded-lg h-40" :src="featured?.card_image" />
+  </div>
 </template>

@@ -1,8 +1,8 @@
 export default defineAppConfig({
   general: {
     title: "Minted Directory",
-    logo: "/logo.png",
-    iconLogo: "",
+    logo: "",
+    iconLogo: "fluent-emoji-flat:leaf-fluttering-in-wind",
   },
   site: {
     name: "Nuxt Starters",
@@ -72,7 +72,7 @@ export default defineAppConfig({
     navbar: {
       colorModeSelector: true,
       links: [
-        { name: "Home", to: "/" },
+        { name: "Directory", to: "/" },
         { name: "Blog", to: "/blog" },
         { name: "Advertise", to: "/advertise" },
         {

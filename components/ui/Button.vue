@@ -1,31 +1,11 @@
 <script setup lang="ts">
 const props = defineProps(['icon', 'color']);
-const usedColor: string = props.color ? props.color : 'primary';
 </script>
 
 <template>
   <button type="button"
-    class="not-prose inline-flex items-center gap-x-2 rounded-md px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
-    :class="usedColor">
-    <Icon v-if="icon" :name="icon" class="-ml-0.5 h-5 w-5" aria-hidden="true" />
+    class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-sm gap-x-1.5 px-2.5 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-700 text-gray-900 dark:text-white bg-white hover:bg-gray-50 disabled:bg-white dark:bg-gray-900 dark:hover:bg-gray-800/50 dark:disabled:bg-gray-900 focus-visible:ring-2 focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 inline-flex items-center">
+    <Icon v-if="icon" :name="icon" class="h-4 w-4" aria-hidden="true" />
     <slot />
   </button>
 </template>
-
-<style scoped lang="postcss">
-.blue {
-  @apply bg-blue-600 hover:bg-blue-500 focus-visible:outline-blue-600;
-}
-
-.primary {
-  @apply bg-primary-600 hover:bg-primary-600 focus-visible:outline-primary-600;
-}
-
-.secondary {
-  @apply bg-secondary-600 hover:bg-secondary-600 focus-visible:outline-secondary-600;
-}
-
-.indigo {
-  @apply bg-indigo-600 hover:bg-indigo-600 focus-visible:outline-indigo-600;
-}
-</style>
