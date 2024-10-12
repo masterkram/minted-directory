@@ -36,6 +36,8 @@ export function useDirectory(): AsyncData<
         _extension: "md",
       });
 
+      query.only(["featured", "card_image", "description", "title", "_slug"]);
+
       return query.sort({ featured: 1 }).find() as Promise<ListingContent[]>;
     },
     { watch: [search, tags] }
