@@ -6,7 +6,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/55d849bd-347a-430c-9cf7-3a200bbfb65e" width="85%" alt="Minted Directory Screenshot" />
+  <img src="https://github.com/user-attachments/assets/952a6903-841b-4102-a34b-d6f297079e03" width="85%" alt="Minted Directory Screenshot" />
 </div>
 
 <br/>
