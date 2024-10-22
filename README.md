@@ -27,30 +27,61 @@ Read the [docs](https://minteddirectory.com/docs)
 
 ### Local Development
 
-First install and run the project:
-```
-pnpm install
+Duplicate the template then clone the repository.
 
+```sh
+git clone git@github.com:youraccount/projectname.git my-directory
+```
+
+Or use the github cli to create a repository based on the template and clone in one command:
+
+```sh
+gh repo create my-directory --template masterkram/minted-directory --private --clone
+```
+
+Go to the cloned folder:
+```sh
+cd my-directory
+```
+
+Install dependencies
+
+```sh
+pnpm install
+```
+
+Run the website:
+
+```sh
 pnpm dev
 ```
 
-Then you can start customizing and building your directory.
-+ Customize the `app.config.ts`
+Congrats :tada:
+
+You can start customizing and building your directory.
+
+### Customization
+
+To customize the directory style:
 + Change the `primary`, `secondary` color and `fontFamily` in `tailwind.config.ts`
-+ Add content to `/content/dir` and `/content/blog`
++ Customize the `app.config.ts`
+
+Read about the possible changes to the app config [here](https://minteddirectory/docs/settings).
+
+### Adding Content
+
+Add listings by adding markdown files to `/content/dir`
+
+Add blog articles by adding markdown files to `/content/blog`
 
 ### Deployment
 
-Build the application for production:
+Deploy as a pre-rendered, static site for best SEO performance:
 
 ```bash
-pnpm run build
-```
-
-Locally preview production build:
-
-```bash
-pnpm run preview
+pnpm run generate
 ```
 
 Check out the [deployment documentation](https://minteddirectory.com/docs/deployment) for more information.
+
+---
