@@ -1,3 +1,5 @@
+import type Emoji from "./components/OgImage/Emoji.vue";
+
 export default defineAppConfig({
   general: {
     title: "Minted Directory",
@@ -5,9 +7,16 @@ export default defineAppConfig({
     iconLogo: "fluent-emoji-flat:leaf-fluttering-in-wind",
   },
   site: {
+    // override the general settings for seo tags.
+    // leave empty for general priority.
+    // url is necessary for correct function of seo module.
     name: "Nuxt Starters",
     description: "Find the best nuxt starter kits.",
     url: "https://nuxtstarters.com",
+    favicon: {
+      image: "",
+      emoji: "🤝🏽",
+    },
   },
   directory: {
     search: {
