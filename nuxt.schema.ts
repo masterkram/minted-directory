@@ -20,6 +20,45 @@ export default defineNuxtSchema({
         }),
       },
     }),
+    site: group({
+      title: "Site Settings",
+      description: "SEO and Site Metadata Settings",
+      fields: {
+        name: field({
+          type: "string",
+          title: "Title",
+          description:
+            "Title of the application. If empty general title will be used.",
+        }),
+        description: field({
+          type: "string",
+          title: "SEO Site Description",
+          description:
+            "Used for the description meta tag. If empty general description will be used.",
+        }),
+        url: field({
+          type: "string",
+          title: "URL",
+          description:
+            "Base url of your website, important for the correct function of the seo module.",
+          default: "https://example.com",
+        }),
+        favicon: group({
+          title: "",
+          fields: {
+            emoji: field({
+              type: "string",
+              title: "emoji favicon",
+              default: "🍃",
+            }),
+            image: field({
+              type: "file",
+              tile: "image favicon",
+            }),
+          },
+        }),
+      },
+    }),
     directory: group({
       title: "Directory",
       description: "Directory configuration.",
