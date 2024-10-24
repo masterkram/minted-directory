@@ -29,5 +29,6 @@
   "devDependencies": {
     "@iconify-json/tabler": "^1.2.5",
     "@nuxt/icon": "^1.5.1"
-  }
+  },
+  "packageManager": "pnpm@9.12.2"
 }
