@@ -23,7 +23,6 @@ if (page.value) {
     ...(page.value.ogImage || {}),
   });
 }
-definePageMeta({ middleware: ['search-from-url'] })
 </script>
 
 <template>

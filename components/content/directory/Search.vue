@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { LocationQueryRaw } from 'vue-router';
 import formatString from '~~/util/formatString';
-const router = useRouter();
 
 const search: Ref<string> = useState("search");
 const selectedTags: Ref<string[]> = useState("tags", () => []);
@@ -17,26 +16,6 @@ async function getSearchPlaceholder() {
 
   return searchConfig?.placeholder ?? "Search";
 }
-
-interface DirectoryQuery {
-  search?: string;
-  tags?: string[];
-}
-
-function updateSearchQueryParameter() {
-  const queryObject: DirectoryQuery = {};
-
-  if (search.value && search.value.length > 0) {
-    queryObject.search = search.value;
-  }
-  if (selectedTags.value && selectedTags.value.length > 0) {
-    queryObject.tags = selectedTags.value;
-  }
-
-  router.push({ query: queryObject as LocationQueryRaw });
-}
-
-watch([search, selectedTags], updateSearchQueryParameter, { deep: true });
 
 const searchInput = useKeyFocus();
 </script>
