@@ -41,6 +41,15 @@ export default defineNuxtConfig({
       },
     },
   },
-
+  nitro: {
+    prerender: {
+      failOnError: false,
+      crawlLinks: true,
+      routes: ["/", "/sitemap.xml"],
+    },
+  },
+  site: {
+    url: "https://example.com",
+  },
   compatibilityDate: "2024-09-20",
 });

@@ -20,6 +20,10 @@ defineOgImage({
   title: title.value,
   description: description.value
 });
+
+definePageMeta({
+  documentDriven: false
+});
 </script>
 
 <template>
