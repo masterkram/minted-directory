@@ -1,0 +1,1 @@
+.dark body{--tw-bg-opacity:1;background-color:rgb(39 39 42/var(--tw-bg-opacity))}@keyframes fadeInUp{0%{opacity:0;transform:translateY(.5rem)}to{opacity:1;transform:none}}@keyframes fadeOutDown{0%{opacity:1}to{opacity:0;transform:translateY(.5rem)}}.page-enter-active{animation:fadeInUp .6s forwards}.page-leave-active{animation:fadeOutDown .6s backwards}
