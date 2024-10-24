@@ -10,12 +10,12 @@ export default defineAppConfig({
     // override the general settings for seo tags.
     // leave empty for general priority.
     // url is necessary for correct function of seo module.
-    name: "Nuxt Starters",
-    description: "Find the best nuxt starter kits.",
-    url: "https://nuxtstarters.com",
+    name: "Minted Directory",
+    description: "Example Description",
+    url: "https://example.com",
     favicon: {
       image: "",
-      emoji: "🤝🏽",
+      emoji: "🍃",
     },
   },
   directory: {
