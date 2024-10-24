@@ -3,7 +3,7 @@ layout: wide
 description: Read the best articles related to the directory.
 ---
 
-::icon-center-hero{icon="tabler:zeppelin"}
+::center-hero{icon="tabler:zeppelin"}
 # Welcome to the Blog
 
 #description
