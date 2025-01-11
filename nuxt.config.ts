@@ -38,6 +38,9 @@ export default defineNuxtConfig({
       posthogHost: process.env.POSTHOG_HOST,
       mdc: {
         useNuxtImage: true,
+        headings: {
+          anchorLinks: false
+        }
       },
     },
   },
