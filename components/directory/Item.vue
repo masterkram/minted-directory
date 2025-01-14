@@ -12,7 +12,7 @@ const props = defineProps(['item']);
     <p>
       {{ item.description }}
     </p>
-    <div class="p-0 mt-2 flex gap-2">
+    <div class="p-0 mt-2 flex flex-wrap gap-2">
       <UiTag v-for="tag in item.tags" :tag="tag" />
     </div>
   </NuxtLink>
