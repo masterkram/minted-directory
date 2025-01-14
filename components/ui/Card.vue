@@ -23,7 +23,7 @@ defineProps(['item']);
       <p class="line-clamp-4 mt-2">
         {{ item.description }}
       </p>
-      <div class="p-0 mt-2 flex gap-2">
+      <div class="p-0 mt-2 flex gap-2 flex-wrap">
         <UiTag v-for="tag in item.tags" :tag="tag" />
       </div>
     </div>
