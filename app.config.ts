@@ -98,6 +98,25 @@ export default defineAppConfig({
   },
   footer: {
     description: "Best directory for my niche.",
+    navigation: [
+      {
+        title: "Directory", links: [{ title: "Submit", link: "/submit" }, { title: "Advertise", link: "/advertise" }],
+      },
+      {
+        title: "Categories", links: [
+          { title: "SAAS", link: "/tags/saas" },
+          { title: "Dashboard", link: "/tags/dashboard" },
+          { title: "Landing Page", link: "/tags/landing-page" },
+          { title: "Toolbox", link: "/tags/toolbox" },
+        ],
+      },
+      {
+        title: "Blog", links: [{ title: "Articles", link: "/blog" }],
+      },
+      {
+        title: "Legal", links: [{ title: "Privacy Policy", link: "/legal/terms-of-service" }, { title: "Terms of Service", link: "/legal/privacy-policy" }],
+      },
+    ],
     socials: {
       github: {
         link: "",
