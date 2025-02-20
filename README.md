@@ -84,4 +84,6 @@ pnpm run generate
 
 Check out the [deployment documentation](https://minteddirectory.com/docs/deployment) for more information.
 
----
+## Community
+
+[Join the discord](https://discord.gg/5UbrTNzX7y)
