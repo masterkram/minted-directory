@@ -2,6 +2,9 @@
 layout: wide
 ---
 
+::pre-render-tags
+::
+
 # This is your brand new directory ! 👋
 
 You can customize this page in markdown.
