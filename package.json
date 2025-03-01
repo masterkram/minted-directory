@@ -12,10 +12,10 @@
   "dependencies": {
     "@headlessui/vue": "^1.7.23",
     "@nuxt/content": "3.0.0-alpha.8",
+    "@nuxt/eslint": "^0.7.5",
     "@nuxt/fonts": "^0.9.2",
     "@nuxt/image": "^1.8.0",
     "@nuxt/scripts": "^0.9.2",
-    "@nuxthq/studio": "^2.1.1",
     "@nuxtjs/color-mode": "^3.5.1",
     "@nuxtjs/seo": "2.0.0-rc.21",
     "@nuxtjs/tailwindcss": "^6.12.1",
@@ -28,7 +28,8 @@
   },
   "devDependencies": {
     "@iconify-json/tabler": "^1.2.5",
-    "@nuxt/icon": "^1.5.1"
+    "@nuxt/icon": "^1.5.1",
+    "typescript": "^5.7.3"
   },
   "packageManager": "pnpm@9.12.2"
 }

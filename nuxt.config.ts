@@ -1,58 +1,54 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
 
   modules: [
-    "@nuxtjs/tailwindcss",
-    "@nuxt/content",
-    "@nuxt/icon",
-    "@nuxthq/studio",
-    "@nuxtjs/color-mode",
-    "@nuxtjs/seo",
-    "@nuxt/scripts",
-    "@nuxt/image",
-    "@nuxt/fonts",
+    '@nuxtjs/tailwindcss',
+    '@nuxt/fonts',
+    '@nuxt/icon',
+    '@nuxt/content',
+    '@nuxtjs/color-mode',
+    '@nuxt/eslint',
+    '@nuxt/image',
   ],
-
+  devtools: { enabled: true },
+  site: {
+    url: 'https://example.com',
+  },
   colorMode: {
-    classSuffix: "",
+    classSuffix: '',
   },
-
-  // https://content.nuxt.com/
-  content: {
-    documentDriven: {
-      injectPage: false,
-    },
-    highlight: false,
-  },
-
-  ogImage: {
-    defaults: {
-      component: "OgImage",
-    },
-  },
-
   runtimeConfig: {
     public: {
       posthogPublicKey: process.env.POSTHOG_PUBLIC_KEY,
       posthogHost: process.env.POSTHOG_HOST,
       mdc: {
-        useNuxtImage: true,
         headings: {
-          anchorLinks: false
-        }
+          anchorLinks: {
+            h1: false,
+            h2: false,
+            h3: false,
+            h4: false,
+            h5: false,
+            h6: false,
+          },
+        },
       },
     },
   },
+  compatibilityDate: '2025-01-15',
   nitro: {
     prerender: {
       failOnError: false,
       crawlLinks: true,
-      routes: ["/", "/sitemap.xml"],
+      routes: ['/', '/sitemap.xml'],
     },
   },
-  site: {
-    url: "https://example.com",
+  eslint: {
+    config: {
+      stylistic: {
+        semi: true,
+        quotes: 'single',
+      },
+    },
   },
-  compatibilityDate: "2024-09-20",
 });
