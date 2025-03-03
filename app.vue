@@ -1,14 +1,25 @@
-<script setup lang="ts">
-const { layout } = useContent();
-
-const layoutName = computed(() => layout.value || 'wide');
+<script lang="ts" setup>
+const config = useAppConfig();
+useHead({
+  htmlAttrs: {
+    lang: config.general.language,
+  },
+  link: [
+    {
+      rel: 'icon',
+      type: 'image/png',
+      href: '/logo.png',
+    },
+  ],
+});
 </script>
 
 <template>
-
   <AppLayout>
-    <NuxtLayout :name="layoutName">
-      <NuxtPage class="page-enter-active" />
+    <NuxtLayout>
+      <DocumentProse>
+        <NuxtPage class="page-enter-active" />
+      </DocumentProse>
     </NuxtLayout>
   </AppLayout>
 </template>

@@ -1,10 +1,10 @@
-import { computed } from "vue";
-import type Tag from "~~/types/Tag";
-import { useState } from "#app";
-import { useAppConfig } from "#imports";
+import { computed } from 'vue';
+import type Tag from '~~/types/Tag';
+import { useState } from '#app';
+import { useAppConfig } from '#imports';
 
 export function useTags() {
-  const selectedTags = useState<string[]>("tags", () => []);
+  const selectedTags = useState<string[]>('tags', () => []);
   const tags = useAppConfig().directory.tags as Tag[] | undefined;
 
   const availableTags = computed((): Tag[] => {
@@ -12,7 +12,7 @@ export function useTags() {
       return [];
     }
     return tags.filter(
-      (e) => e && !selectedTags.value.includes((e as Tag).name)
+      (e: Tag) => e && !selectedTags.value.includes((e as Tag).name),
     );
   });
 
@@ -28,7 +28,7 @@ export function useTags() {
     const selectedValue = select.value;
 
     addTagByName(selectedValue);
-    select.value = "";
+    select.value = '';
   }
 
   function addTagByName(name: string) {

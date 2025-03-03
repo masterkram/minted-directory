@@ -1,5 +1,8 @@
 ---
 layout: wide
+og_image:
+  title: My Directory
+  description: A brand new directory 🎉
 ---
 
 ::pre-render-tags
