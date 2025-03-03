@@ -8,7 +8,7 @@ const props = withDefaults(defineProps<{
   fullPath: boolean;
 }>(), { fullPath: false });
 
-const link = props.fullPath ? props.item.path : props.item.path.split('/')[2];
+const link = props.fullPath ? props.item.path : `/${props.item.path.split('/')[2]}`;
 </script>
 
 <template>

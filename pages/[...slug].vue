@@ -5,6 +5,10 @@ const route = useRoute();
 const { data: page } = await useCurrentPage(route);
 
 setSeo(page.value);
+
+definePageMeta({
+  middleware: 'set-layout',
+});
 </script>
 
 <template>
