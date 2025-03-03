@@ -1,8 +1,8 @@
 <script setup lang="ts">
 const config = useAppConfig().directory.grid;
 
-const search: Ref<string> = useState("search");
-const tags: Ref<string[]> = useState("tags");
+const search: Ref<string> = useState('search');
+const tags: Ref<string[]> = useState('tags');
 
 const { data } = await useDirectory();
 
@@ -14,13 +14,13 @@ const directoryListings = computed(() => {
 
   if (search.value) {
     filteredData = filteredData?.filter(e =>
-      (e.title?.toLowerCase() + e.description?.toLowerCase()).includes(search.value.toLowerCase())
+      (e.title?.toLowerCase() + e.description?.toLowerCase()).includes(search.value.toLowerCase()),
     );
   }
 
   if (tags.value.length > 0) {
     filteredData = filteredData?.filter(e =>
-      tags.value.every(tag => e.tags?.includes(tag))
+      tags.value.every(tag => e.tags?.includes(tag)),
     );
   }
 
@@ -29,6 +29,9 @@ const directoryListings = computed(() => {
 </script>
 
 <template>
-  <DirectoryPureGrid :listings="directoryListings ?? []" :show-submit="config?.submit?.show"
-    :submit-first="config?.submit?.first" />
+  <DirectoryPureGrid
+    :listings="directoryListings ?? []"
+    :show-submit="config?.submit?.show"
+    :submit-first="config?.submit?.first"
+  />
 </template>
