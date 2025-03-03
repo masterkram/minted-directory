@@ -91,7 +91,7 @@ export default defineAppConfig({
       ],
     },
     actionButton: {
-      text: 'Submit a starter',
+      text: 'Submit a listing',
       href: '/submit',
     },
   },

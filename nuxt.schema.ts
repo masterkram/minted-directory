@@ -317,7 +317,7 @@ export default defineNuxtSchema({
               type: 'string',
               title: 'Text',
               description: 'Text for the action button.',
-              default: 'Submit a starter',
+              default: 'Submit a listing',
             }),
             href: field({
               type: 'string',
