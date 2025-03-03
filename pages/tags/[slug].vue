@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import formatString from '~/util/formatString';
-
 const route = useRoute();
 const config = useAppConfig();
 

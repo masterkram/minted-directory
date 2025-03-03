@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import formatString from '~~/util/formatString';
-
 const search: Ref<string> = useState('search');
 const selectedTags: Ref<string[]> = useState('tags', () => []);
 
