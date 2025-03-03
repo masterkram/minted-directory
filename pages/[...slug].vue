@@ -18,16 +18,5 @@ callWithNuxt(app, useSeoMeta, [{ title: getSEOTitle(), description: getSEODescri
 </script>
 
 <template>
-  <div>
-    <ContentRenderer
-      v-if="page"
-      :key="(page as any)._id"
-      :value="page"
-    >
-      <template #empty="{ value }">
-        <DocumentEmpty :value="value" />
-      </template>
-    </ContentRenderer>
-    <DocumentNotFound v-else />
-  </div>
+  <AppRenderer :page="page" />
 </template>

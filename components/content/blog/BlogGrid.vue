@@ -7,6 +7,7 @@ const { data } = await useAsyncData('blog', () => queryCollection('blog').all())
     <UiCard
       v-for="i in data"
       :key="i.id"
+      :full-path="true"
       :item="i"
     />
   </div>
