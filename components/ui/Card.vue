@@ -5,7 +5,7 @@ const cardConfig = useAppConfig().directory?.grid?.card;
 
 const props = withDefaults(defineProps<{
   item: DirectoryCollectionItem;
-  fullPath: boolean;
+  fullPath?: boolean;
 }>(), { fullPath: false });
 
 const link = props.fullPath ? props.item.path : `/${props.item.path.split('/')[2]}`;
