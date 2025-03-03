@@ -18,6 +18,11 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: '',
   },
+  content: {
+    preview: {
+      api: 'https://api.nuxt.studio',
+    },
+  },
   runtimeConfig: {
     public: {
       posthogPublicKey: process.env.POSTHOG_PUBLIC_KEY,
