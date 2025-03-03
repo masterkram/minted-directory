@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
 
   modules: [
+    '@nuxtjs/seo',
     '@nuxtjs/tailwindcss',
     '@nuxt/fonts',
     '@nuxt/icon',

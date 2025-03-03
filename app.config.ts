@@ -3,6 +3,7 @@ export default defineAppConfig({
     title: 'Minted Directory',
     logo: '',
     iconLogo: 'fluent-emoji-flat:leaf-fluttering-in-wind',
+    language: 'en',
   },
   site: {
     // override the general settings for seo tags.

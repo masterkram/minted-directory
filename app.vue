@@ -1,4 +1,17 @@
 <script lang="ts" setup>
+const config = useAppConfig();
+useHead({
+  htmlAttrs: {
+    lang: config.general.language,
+  },
+  link: [
+    {
+      rel: 'icon',
+      type: 'image/png',
+      href: '/logo.png',
+    },
+  ],
+});
 </script>
 
 <template>

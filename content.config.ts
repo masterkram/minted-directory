@@ -7,11 +7,25 @@ export default defineContentConfig({
       source: '*.md',
       schema: z.object({
         layout: z.string().optional(),
+        og_image: z.object({
+          style: z.enum(['Custom', 'Emoji', 'Simple', 'CoverImage']),
+          title: z.string().optional(),
+          description: z.string().optional(),
+          emoji: z.string().emoji().optional(),
+        }).optional(),
       }),
     }),
     blog: defineCollection({
       type: 'page',
       source: 'blog/**/*.md',
+      schema: z.object({
+        og_image: z.object({
+          style: z.enum(['Custom', 'Emoji', 'Simple', 'CoverImage']),
+          title: z.string().optional(),
+          description: z.string().optional(),
+          emoji: z.string().emoji().optional(),
+        }).optional(),
+      }),
     }),
     directory: defineCollection({
       type: 'page',
@@ -24,6 +38,8 @@ export default defineContentConfig({
         layout: z.enum(['wide', 'default', 'card', 'thin']).optional(),
         og_image: z.object({
           style: z.enum(['Custom', 'Emoji', 'Simple', 'CoverImage']),
+          title: z.string().optional(),
+          description: z.string().optional(),
           emoji: z.string().emoji().optional(),
         }).optional(),
       }),

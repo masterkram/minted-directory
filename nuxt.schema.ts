@@ -12,6 +12,12 @@ export default defineNuxtSchema({
           description: 'Title of the application.',
           default: 'New Directory',
         }),
+        language: field({
+          type: 'string',
+          title: 'Language',
+          description: 'Language Code For The directory.',
+          default: 'en',
+        }),
         logo: field({
           type: 'media',
           title: 'Logo',
