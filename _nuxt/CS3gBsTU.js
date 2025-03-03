@@ -1,0 +1,1 @@
+import{j as t,c as s,i as o,S as c}from"./rfvmtTOo.js";const a={},n={class:"max-w-xl w-full px-5 py-10 mx-auto"};function r(e,l){return o(),s("div",n,[c(e.$slots,"default")])}const f=t(a,[["render",r]]);export{f as default};

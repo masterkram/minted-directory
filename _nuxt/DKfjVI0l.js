@@ -1,0 +1,1 @@
+import{d as n,R as o,i as s,w as f,S as p,B as _}from"./rfvmtTOo.js";const u=n({__name:"ProseA",props:{href:{type:String,default:""},target:{type:String,default:"_blank",required:!1}},setup(t){const e=t;return(r,c)=>{const a=_;return s(),o(a,{href:e.href,target:e.target},{default:f(()=>[p(r.$slots,"default")]),_:3},8,["href","target"])}}});export{u as default};
