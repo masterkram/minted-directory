@@ -1,23 +1,9 @@
 <script setup lang="ts">
-import type Tag from '~~/types/Tag';
 
 const config = useAppConfig();
 const socials = computed(() => config.footer.socials ? Object.values(config.footer.socials).filter(i => i?.icon && i?.link) : []);
 
-const navigation = [
-  {
-    title: 'Directory', links: [{ title: 'Submit', link: '/submit' }, { title: 'Advertise', link: '/advertise' }],
-  },
-  {
-    title: 'Categories', links: config.directory.tags?.filter(e => e && (e as Tag).name).map(e => ({ title: (e as Tag).name, link: `/tags/${(e as Tag).name}` })).slice(0, 4),
-  },
-  {
-    title: 'Blog', links: [{ title: 'Articles', link: '/blog' }],
-  },
-  {
-    title: 'Legal', links: [{ title: 'Privacy Policy', link: '/legal/terms-of-service' }, { title: 'Terms of Service', link: '/legal/privacy-policy' }],
-  },
-];
+const navigation = computed(() => config.footer.navigation ? Object.values(config.footer.navigation) : []);
 </script>
 
 <template>
@@ -52,13 +38,9 @@ const navigation = [
           </div>
         </div>
         <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-          <div
-            v-for="count in 2"
-            class="md:grid md:grid-cols-2 md:gap-8"
-          >
-            <div>
-              <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">
-                {{ navigation[count - 1].title }}
+          <div v-for="count in 2" class="md:grid md:grid-cols-2 md:gap-8">
+            <div v-if="navigation[count - 1]" >
+              <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">{{ navigation[count - 1].title }}
               </h3>
               <ul
                 role="list"
@@ -77,9 +59,8 @@ const navigation = [
                 </li>
               </ul>
             </div>
-            <div class="mt-10 md:mt-0">
-              <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">
-                {{ navigation[count + 1].title }}
+            <div class="mt-10 md:mt-0" v-if="navigation[count + 1]">
+              <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">{{ navigation[count + 1].title }}
               </h3>
               <ul
                 role="list"

@@ -345,6 +345,12 @@ export default defineNuxtSchema({
           description: 'Description to display in the footer.',
           default: 'Find the the best Nuxt templates.',
         }),
+        navigation: field({
+          type: 'array',
+          title: 'Links',
+          description: 'Array of navigation object displayed in footer.',
+          default: []
+        }),
         socials: group({
           title: 'Socials',
           description: 'Social links for the footer.',
